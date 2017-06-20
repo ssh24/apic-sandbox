@@ -1,0 +1,81 @@
+type: bluemix
+server:
+  displayName: snowdon
+  host: snowdon.stratus.apim.ibmcloud.com
+  dedicated: true
+  name: snowdon
+org:
+  id: 5849d0980cf25bda99a9d1c7
+  name: cgoleusibmcom-sakib-test-space-1
+  displayName: cgole@us.ibm.com (sakib-test-space-1)
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://snowdon.stratus.apim.ibmcloud.com/v1/orgs/5849d0980cf25bda99a9d1c7'
+  externalOrgId: 6cec0698-fa16-47d8-9c74-37a02f4284c4
+  externalInviteOverride: >-
+    https://ace.service.snowdon.stratus.apim.ibmcloud.com/apis/catalog/invitation
+  externalSpaceId: 6cec0698-fa16-47d8-9c74-37a02f4284c4
+  externalNativeOrgId: a33ad490-18fa-423f-bba1-d12325c5c76e
+catalog:
+  id: 5849d0980cf25bda99a9d1d3
+  orgId: 5849d0980cf25bda99a9d1c7
+  name: Sandbox
+  shortName: sb
+  owner:
+    id: 5827964e0cf29fd1fc68880c
+    username: cgole@us.ibm.com
+    context: apimanager
+    idpId: 582490831a4f6d81444fd41d
+    email: cgole@us.ibm.com
+    firstName: cgole@us.ibm.com cgole@us.ibm.com
+    lastName: ''
+    status: ACTIVE
+    lastLoginTime: '2016-12-12T16:43:50.732+0000'
+    url: >-
+      https://snowdon.stratus.apim.ibmcloud.com/v1/users/5827964e0cf29fd1fc68880c
+  apiCenter: false
+  baseUrl: >-
+    https://api.snowdon.stratus.apim.ibmcloud.com/cgoleusibmcom-sakib-test-space-1/sb
+  portalType: BASIC
+  portalUrl: >-
+    https://developer.snowdon.stratus.apim.ibmcloud.com/cgoleusibmcom-sakib-test-space-1/sb
+  advPortalUrl: >-
+    https://sb-cgoleusibmcom-sakib-test-space-1.developer.snowdon.stratus.apim.ibmcloud.com
+  gatewayType: DataPowerGateway
+  idp: 5849d0980cf25bda99a9d1d4
+  idps:
+    - 5849d0980cf25bda99a9d1d4
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/TEST_APIMGMT_GATEWAY
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 5849d0990cf25bda99a9d1dc
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: 0c5bf555-8862-4869-b5ee-c4208f1a0fdf
+    clientSecret: yW8rB5gR4vQ1pU6nJ5vS4yI4lR5nI0yV1eC8jW4yG1wT0dQ6aU
+  createdAt: '2016-12-08T21:28:56.997+0000'
+  updatedAt: '2016-12-08T21:28:56.997+0000'
+  createdBy: apim-saas@wwpdl.vnet.ibm.com
+  updatedBy: apim-saas@wwpdl.vnet.ibm.com
+  url: >-
+    https://snowdon.stratus.apim.ibmcloud.com/v1/orgs/5849d0980cf25bda99a9d1c7/environments/5849d0980cf25bda99a9d1d3
+  productDeploymentApprovalRequiredStates: []
+  orgName: cgoleusibmcom-sakib-test-space-1
+space:
+  none: true
+app:
+  none: true
+id: ec83b398-a55c-4556-95ca-ad0a6a4c7142
+target: 1.0.0

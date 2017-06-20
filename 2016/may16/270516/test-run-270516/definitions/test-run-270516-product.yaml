@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: test-run-270516
+  title: test-run-270516
+  version: 1.0.0
+
+apis:
+  'test-run-270516':
+    $ref: test-run-270516.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

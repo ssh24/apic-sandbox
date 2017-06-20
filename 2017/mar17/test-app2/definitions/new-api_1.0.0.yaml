@@ -1,0 +1,48 @@
+swagger: '2.0'
+info:
+  x-ibm-name: new-api
+  title: new-api
+  version: 1.0.0
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /new-api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+security:
+  - clientIdHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(target-url)$(request.path)
+          tls-profile: $(invoke-tls-profile)
+  catalogs:
+    sb:
+      properties:
+        runtime-url: >-
+          https://apiconnect-3f1a6c88-67b9-4a73-8657-be4ba8c4a1a8.sakibcaibmcom-dev.apic.stage1.mybluemix.net
+        invoke-tls-profile: 'client:Loopback-client'
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false
+paths: {}
+definitions: {}
+tags: []

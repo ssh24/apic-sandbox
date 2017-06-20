@@ -1,0 +1,32 @@
+UI_Default_Server:
+  displayName: Hogan
+  host: hogan.apiconnect.ibmcloud.com
+  dedicated: true
+  name: hogan
+hogan.apiconnect.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+us.apiconnect.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+snowdon.stratus.apim.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30

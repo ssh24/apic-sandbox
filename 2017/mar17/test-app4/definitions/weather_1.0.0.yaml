@@ -1,0 +1,642 @@
+swagger: '2.0'
+info:
+  title: Weather
+  description: ''
+  x-ibm-name: weather
+  version: 1.0.0
+schemes:
+  - https
+basePath: /Weather
+produces:
+  - application/xml
+consumes:
+  - text/xml
+securityDefinitions:
+  clientID:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+    description: ''
+security:
+  - clientID: []
+x-ibm-configuration:
+  type: wsdl
+  wsdl-definition:
+    wsdl: weather.wsdl
+    service: Weather
+    port: WeatherSoap
+    soap-version: '1.1'
+  assembly:
+    execute:
+      - proxy:
+          title: proxy
+          target-url: 'http://wsf.cdyne.com/WeatherWS/Weather.asmx'
+  gateway: datapower-gateway
+  enforced: true
+  testable: true
+  phase: realized
+  cors:
+    enabled: true
+paths:
+  /GetWeatherInformation:
+    post:
+      summary: Operation GetWeatherInformation
+      description: Gets Information for each WeatherID
+      operationId: GetWeatherInformation
+      x-ibm-soap:
+        soap-action: 'http://ws.cdyne.com/WeatherWS/GetWeatherInformation'
+        soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetWeatherInformation'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/GetWeatherInformationInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/GetWeatherInformationOutput'
+  /GetCityForecastByZIP:
+    post:
+      summary: Operation GetCityForecastByZIP
+      description: >-
+        Allows you to get your City Forecast Over the Next 7 Days, which is
+        updated hourly. U.S. Only
+      operationId: GetCityForecastByZIP
+      x-ibm-soap:
+        soap-action: 'http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP'
+        soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetCityForecastByZIP'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/GetCityForecastByZIPInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/GetCityForecastByZIPOutput'
+  /GetCityWeatherByZIP:
+    post:
+      summary: Operation GetCityWeatherByZIP
+      description: >-
+        Allows you to get your City's Weather, which is updated hourly. U.S.
+        Only
+      operationId: GetCityWeatherByZIP
+      x-ibm-soap:
+        soap-action: 'http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP'
+        soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetCityWeatherByZIP'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/GetCityWeatherByZIPInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/GetCityWeatherByZIPOutput'
+definitions:
+  Security:
+    xml:
+      namespace: >-
+        http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+      prefix: wsse
+    type: object
+    properties:
+      UsernameToken:
+        type: object
+        properties:
+          Username:
+            type: string
+          Password:
+            type: string
+  GetWeatherInformationInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/GetWeatherInformationHeader'
+          Body:
+            type: object
+            properties:
+              GetWeatherInformation:
+                $ref: '#/definitions/GetWeatherInformation_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <UsernameToken>
+          <Username>string</Username>
+          <Password>string</Password>
+         </UsernameToken>
+        </wsse:Security>
+       </soap-env:Header>
+       <soap-env:Body>
+        <tns:GetWeatherInformation xmlns:tns="http://ws.cdyne.com/WeatherWS/"></tns:GetWeatherInformation>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetWeatherInformationHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  GetWeatherInformationOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              GetWeatherInformationResponse:
+                $ref: '#/definitions/GetWeatherInformationResponse_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Body>
+        <tns:GetWeatherInformationResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+         <tns:GetWeatherInformationResult>
+          <tns:WeatherDescription><!-- between zero and unlimited repetitions of this element -->
+           <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+           <tns:Description>string</tns:Description>
+           <tns:PictureURL>string</tns:PictureURL>
+          </tns:WeatherDescription>
+         </tns:GetWeatherInformationResult>
+        </tns:GetWeatherInformationResponse>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetCityForecastByZIPInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/GetCityForecastByZIPHeader'
+          Body:
+            type: object
+            properties:
+              GetCityForecastByZIP:
+                $ref: '#/definitions/GetCityForecastByZIP_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <UsernameToken>
+          <Username>string</Username>
+          <Password>string</Password>
+         </UsernameToken>
+        </wsse:Security>
+       </soap-env:Header>
+       <soap-env:Body>
+        <tns:GetCityForecastByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+         <tns:ZIP>string</tns:ZIP>
+        </tns:GetCityForecastByZIP>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetCityForecastByZIPHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  GetCityForecastByZIPOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              GetCityForecastByZIPResponse:
+                $ref: '#/definitions/GetCityForecastByZIPResponse_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Body>
+        <tns:GetCityForecastByZIPResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+         <tns:GetCityForecastByZIPResult>
+          <tns:Success><!-- mandatory -->true</tns:Success>
+          <tns:ResponseText>string</tns:ResponseText>
+          <tns:State>string</tns:State>
+          <tns:City>string</tns:City>
+          <tns:WeatherStationCity>string</tns:WeatherStationCity>
+          <tns:ForecastResult>
+           <tns:Forecast><!-- between zero and unlimited repetitions of this element -->
+            <tns:Date><!-- mandatory -->2016-04-18T14:07:37</tns:Date>
+            <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+            <tns:Desciption>string</tns:Desciption>
+            <tns:Temperatures><!-- mandatory -->
+             <tns:MorningLow>string</tns:MorningLow>
+             <tns:DaytimeHigh>string</tns:DaytimeHigh>
+            </tns:Temperatures>
+            <tns:ProbabilityOfPrecipiation><!-- mandatory -->
+             <tns:Nighttime>string</tns:Nighttime>
+             <tns:Daytime>string</tns:Daytime>
+            </tns:ProbabilityOfPrecipiation>
+           </tns:Forecast>
+          </tns:ForecastResult>
+         </tns:GetCityForecastByZIPResult>
+        </tns:GetCityForecastByZIPResponse>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetCityWeatherByZIPInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/GetCityWeatherByZIPHeader'
+          Body:
+            type: object
+            properties:
+              GetCityWeatherByZIP:
+                $ref: '#/definitions/GetCityWeatherByZIP_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <UsernameToken>
+          <Username>string</Username>
+          <Password>string</Password>
+         </UsernameToken>
+        </wsse:Security>
+       </soap-env:Header>
+       <soap-env:Body>
+        <tns:GetCityWeatherByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+         <tns:ZIP>string</tns:ZIP>
+        </tns:GetCityWeatherByZIP>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetCityWeatherByZIPHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  GetCityWeatherByZIPOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soap-env
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              GetCityWeatherByZIPResponse:
+                $ref: '#/definitions/GetCityWeatherByZIPResponse_tns'
+    example: >-
+
+      <soap-env:Envelope
+      xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+       <soap-env:Body>
+        <tns:GetCityWeatherByZIPResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+         <tns:GetCityWeatherByZIPResult><!-- mandatory -->
+          <tns:Success><!-- mandatory -->true</tns:Success>
+          <tns:ResponseText>string</tns:ResponseText>
+          <tns:State>string</tns:State>
+          <tns:City>string</tns:City>
+          <tns:WeatherStationCity>string</tns:WeatherStationCity>
+          <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+          <tns:Description>string</tns:Description>
+          <tns:Temperature>string</tns:Temperature>
+          <tns:RelativeHumidity>string</tns:RelativeHumidity>
+          <tns:Wind>string</tns:Wind>
+          <tns:Pressure>string</tns:Pressure>
+          <tns:Visibility>string</tns:Visibility>
+          <tns:WindChill>string</tns:WindChill>
+          <tns:Remarks>string</tns:Remarks>
+         </tns:GetCityWeatherByZIPResult>
+        </tns:GetCityWeatherByZIPResponse>
+       </soap-env:Body>
+      </soap-env:Envelope>
+  GetWeatherInformation_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties: {}
+    example: |-
+
+      <tns:GetWeatherInformation xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+      </tns:GetWeatherInformation>
+  GetWeatherInformationResponse_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      GetWeatherInformationResult:
+        $ref: '#/definitions/ArrayOfWeatherDescription_tns'
+    example: >-
+
+      <tns:GetWeatherInformationResponse
+      xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+       <tns:GetWeatherInformationResult>
+        <tns:WeatherDescription><!-- between zero and unlimited repetitions of this element -->
+         <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+         <tns:Description>string</tns:Description>
+         <tns:PictureURL>string</tns:PictureURL>
+        </tns:WeatherDescription>
+       </tns:GetWeatherInformationResult>
+      </tns:GetWeatherInformationResponse>
+  GetCityForecastByZIP_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      ZIP:
+        type: string
+    example: |-
+
+      <tns:GetCityForecastByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+       <tns:ZIP>string</tns:ZIP>
+      </tns:GetCityForecastByZIP>
+  GetCityForecastByZIPResponse_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      GetCityForecastByZIPResult:
+        $ref: '#/definitions/ForecastReturn_tns'
+    example: >-
+
+      <tns:GetCityForecastByZIPResponse
+      xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+       <tns:GetCityForecastByZIPResult>
+        <tns:Success><!-- mandatory -->true</tns:Success>
+        <tns:ResponseText>string</tns:ResponseText>
+        <tns:State>string</tns:State>
+        <tns:City>string</tns:City>
+        <tns:WeatherStationCity>string</tns:WeatherStationCity>
+        <tns:ForecastResult>
+         <tns:Forecast><!-- between zero and unlimited repetitions of this element -->
+          <tns:Date><!-- mandatory -->2016-04-18T14:07:37</tns:Date>
+          <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+          <tns:Desciption>string</tns:Desciption>
+          <tns:Temperatures><!-- mandatory -->
+           <tns:MorningLow>string</tns:MorningLow>
+           <tns:DaytimeHigh>string</tns:DaytimeHigh>
+          </tns:Temperatures>
+          <tns:ProbabilityOfPrecipiation><!-- mandatory -->
+           <tns:Nighttime>string</tns:Nighttime>
+           <tns:Daytime>string</tns:Daytime>
+          </tns:ProbabilityOfPrecipiation>
+         </tns:Forecast>
+        </tns:ForecastResult>
+       </tns:GetCityForecastByZIPResult>
+      </tns:GetCityForecastByZIPResponse>
+  GetCityWeatherByZIP_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      ZIP:
+        type: string
+    example: |-
+
+      <tns:GetCityWeatherByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+       <tns:ZIP>string</tns:ZIP>
+      </tns:GetCityWeatherByZIP>
+  GetCityWeatherByZIPResponse_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      GetCityWeatherByZIPResult:
+        $ref: '#/definitions/WeatherReturn_tns'
+    required:
+      - GetCityWeatherByZIPResult
+    example: >-
+
+      <tns:GetCityWeatherByZIPResponse
+      xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+       <tns:GetCityWeatherByZIPResult><!-- mandatory -->
+        <tns:Success><!-- mandatory -->true</tns:Success>
+        <tns:ResponseText>string</tns:ResponseText>
+        <tns:State>string</tns:State>
+        <tns:City>string</tns:City>
+        <tns:WeatherStationCity>string</tns:WeatherStationCity>
+        <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+        <tns:Description>string</tns:Description>
+        <tns:Temperature>string</tns:Temperature>
+        <tns:RelativeHumidity>string</tns:RelativeHumidity>
+        <tns:Wind>string</tns:Wind>
+        <tns:Pressure>string</tns:Pressure>
+        <tns:Visibility>string</tns:Visibility>
+        <tns:WindChill>string</tns:WindChill>
+        <tns:Remarks>string</tns:Remarks>
+       </tns:GetCityWeatherByZIPResult>
+      </tns:GetCityWeatherByZIPResponse>
+  ArrayOfWeatherDescription_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      WeatherDescription:
+        type: array
+        items:
+          $ref: '#/definitions/WeatherDescription_tns'
+    x-xsi-type: ArrayOfWeatherDescription
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  ForecastReturn_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      Success:
+        type: boolean
+      ResponseText:
+        type: string
+      State:
+        type: string
+      City:
+        type: string
+      WeatherStationCity:
+        type: string
+      ForecastResult:
+        $ref: '#/definitions/ArrayOfForecast_tns'
+    required:
+      - Success
+    x-xsi-type: ForecastReturn
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  WeatherReturn_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      Success:
+        type: boolean
+      ResponseText:
+        type: string
+      State:
+        type: string
+      City:
+        type: string
+      WeatherStationCity:
+        type: string
+      WeatherID:
+        type: integer
+        format: int32
+        minimum: -32768
+        maximum: 32767
+      Description:
+        type: string
+      Temperature:
+        type: string
+      RelativeHumidity:
+        type: string
+      Wind:
+        type: string
+      Pressure:
+        type: string
+      Visibility:
+        type: string
+      WindChill:
+        type: string
+      Remarks:
+        type: string
+    required:
+      - Success
+      - WeatherID
+    x-xsi-type: WeatherReturn
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  WeatherDescription_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      WeatherID:
+        type: integer
+        format: int32
+        minimum: -32768
+        maximum: 32767
+      Description:
+        type: string
+      PictureURL:
+        type: string
+    required:
+      - WeatherID
+    x-xsi-type: WeatherDescription
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  ArrayOfForecast_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      Forecast:
+        type: array
+        items:
+          $ref: '#/definitions/Forecast_tns'
+        x-nullable: true
+    x-xsi-type: ArrayOfForecast
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  Forecast_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      Date:
+        type: string
+        format: date-time
+      WeatherID:
+        type: integer
+        format: int32
+        minimum: -32768
+        maximum: 32767
+      Desciption:
+        type: string
+      Temperatures:
+        $ref: '#/definitions/temp_tns'
+      ProbabilityOfPrecipiation:
+        $ref: '#/definitions/POP_tns'
+    required:
+      - Date
+      - WeatherID
+      - Temperatures
+      - ProbabilityOfPrecipiation
+    x-xsi-type: Forecast
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  temp_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      MorningLow:
+        type: string
+      DaytimeHigh:
+        type: string
+    x-xsi-type: temp
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+  POP_tns:
+    xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns
+    type: object
+    properties:
+      Nighttime:
+        type: string
+      Daytime:
+        type: string
+    x-xsi-type: POP
+    x-xsi-type-xml:
+      namespace: 'http://ws.cdyne.com/WeatherWS/'
+      prefix: tns

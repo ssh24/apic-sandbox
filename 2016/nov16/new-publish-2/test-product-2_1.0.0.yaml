@@ -1,0 +1,21 @@
+product: 1.0.0
+info:
+  name: test-product-2
+  title: test-product-2
+  version: 1.0.0
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false
+apis:
+  test-api-new-pb-2:
+    $ref: test-api-new-pb-2_1.0.0.yaml

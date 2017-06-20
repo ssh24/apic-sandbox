@@ -1,0 +1,27 @@
+product: 1.0.0
+info:
+  name: new-product
+  title: new-product
+  version: 1.0.1
+  description: test description
+  categories:
+    - /test-category
+visibility:
+  view:
+    type: authenticated
+  subscribe:
+    type: authenticated
+plans:
+  new-plan:
+    title: New Plan 1
+    apis: {}
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false
+apis:
+  test-api:
+    $ref: test-api_v3.1.yaml

@@ -1,0 +1,40 @@
+{
+  "name": "note",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "greet": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "msg",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "greeting",
+        "type": "string"
+      },
+      "http": {
+        "verb": "get"
+      }
+    }
+  }
+}

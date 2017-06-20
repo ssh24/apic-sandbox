@@ -1,0 +1,10 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "db-oracle": {
+    "name": "db-oracle",
+    "connector": "memory"
+  }
+}

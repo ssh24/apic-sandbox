@@ -1,0 +1,21 @@
+product: 1.0.0
+info:
+  name: test2
+  title: test2
+  version: 1.0.0
+apis:
+  test2:
+    $ref: test2.yaml
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

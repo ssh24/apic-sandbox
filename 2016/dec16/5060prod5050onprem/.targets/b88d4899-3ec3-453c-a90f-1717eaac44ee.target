@@ -1,0 +1,115 @@
+type: onprem
+server:
+  host: apim1.rtp.raleigh.ibm.com
+org:
+  url: 'https://apim1.rtp.raleigh.ibm.com/v1/orgs/585199c6e4b0dbceca42146a'
+  id: 585199c6e4b0dbceca42146a
+  name: org1
+  status: active
+  orgType: apiProvider
+  displayName: org1
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  id: 5863fe01e4b0dbceca4216bd
+  orgId: 585199c6e4b0dbceca42146a
+  name: New Catalog sakib
+  shortName: new-catalog-sakib
+  owner:
+    id: 585199c4e4b0dbceca421465
+    username: biniam@ca.ibm.com
+    context: apimanager
+    idpId: 585195d5e4b0dbceca420d7b
+    email: biniam@ca.ibm.com
+    firstName: Biniam
+    lastName: Admikew
+    status: ACTIVE
+    lastLoginTime: '2016-12-29T19:26:21.890+0000'
+    url: 'https://apim1.rtp.raleigh.ibm.com/v1/users/585199c4e4b0dbceca421465'
+  apiCenter: false
+  baseUrl: 'https://<gateway-cluster-address>/org1/new-catalog-sakib'
+  portalType: BASIC
+  portalUrl: 'https://9.37.30.122/org1/new-catalog-sakib'
+  customPortalUrl: 'https://9.37.30.122/org1/new-catalog-sakib'
+  gatewayType: DataPowerGateway
+  idp: 585199c7e4b0dbceca421477
+  idps:
+    - 585199c7e4b0dbceca421477
+  availableRoles:
+    - viewer
+    - developer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/585195fce4b0dbceca420e03
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: true
+  spaceIds:
+    - 5863fe01e4b0dbceca4216c5
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: 761d03b3-8224-4cfd-9bd0-42dad7ae0272
+    clientSecret: bO6cU0xX5sN6gE5nX4sL6gU3pB2nW4yF4iY0dD1kS4oY6oV6iN
+  createdAt: '2016-12-28T18:01:37.335+0000'
+  updatedAt: '2016-12-29T19:55:00.246+0000'
+  createdBy: biniam@ca.ibm.com
+  updatedBy: biniam@ca.ibm.com
+  url: >-
+    https://apim1.rtp.raleigh.ibm.com/v1/orgs/585199c6e4b0dbceca42146a/environments/5863fe01e4b0dbceca4216bd
+  productDeploymentApprovalRequiredStates: []
+  orgName: org1
+  spaces:
+    - id: 5863fe01e4b0dbceca4216c5
+      name: new-space
+      title: New Space
+      description: Automatically created space
+      owner:
+        id: 585199c4e4b0dbceca421465
+        username: biniam@ca.ibm.com
+        context: apimanager
+        idpId: 585195d5e4b0dbceca420d7b
+        email: biniam@ca.ibm.com
+        firstName: Biniam
+        lastName: Admikew
+        status: ACTIVE
+        lastLoginTime: '2016-12-29T19:26:21.890+0000'
+        url: 'https://apim1.rtp.raleigh.ibm.com/v1/users/585199c4e4b0dbceca421465'
+      createdAt: '2016-12-28T18:01:37.378+0000'
+      updatedAt: '2016-12-28T18:01:37.378+0000'
+      createdBy: biniam@ca.ibm.com
+      updatedBy: biniam@ca.ibm.com
+      url: >-
+        https://apim1.rtp.raleigh.ibm.com/v1/orgs/585199c6e4b0dbceca42146a/environments/5863fe01e4b0dbceca4216bd/spaces/5863fe01e4b0dbceca4216c5
+      spaceConfigUrl: >-
+        apic-space://apim1.rtp.raleigh.ibm.com/orgs/org1/catalogs/new-catalog-sakib/spaces/new-space
+space:
+  id: 5863fe01e4b0dbceca4216c5
+  name: new-space
+  title: New Space
+  description: Automatically created space
+  owner:
+    id: 585199c4e4b0dbceca421465
+    username: biniam@ca.ibm.com
+    context: apimanager
+    idpId: 585195d5e4b0dbceca420d7b
+    email: biniam@ca.ibm.com
+    firstName: Biniam
+    lastName: Admikew
+    status: ACTIVE
+    lastLoginTime: '2016-12-29T19:26:21.890+0000'
+    url: 'https://apim1.rtp.raleigh.ibm.com/v1/users/585199c4e4b0dbceca421465'
+  createdAt: '2016-12-28T18:01:37.378+0000'
+  updatedAt: '2016-12-28T18:01:37.378+0000'
+  createdBy: biniam@ca.ibm.com
+  updatedBy: biniam@ca.ibm.com
+  url: >-
+    https://apim1.rtp.raleigh.ibm.com/v1/orgs/585199c6e4b0dbceca42146a/environments/5863fe01e4b0dbceca4216bd/spaces/5863fe01e4b0dbceca4216c5
+  spaceConfigUrl: >-
+    apic-space://apim1.rtp.raleigh.ibm.com/orgs/org1/catalogs/new-catalog-sakib/spaces/new-space
+app:
+  none: true
+id: b88d4899-3ec3-453c-a90f-1717eaac44ee
+target: 1.0.0

@@ -1,0 +1,156 @@
+{
+  "type": "onprem",
+  "id": "58328573e4b0a506ca36030858328580e4b0a506ca36032f",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "on-prem"
+  },
+  "space": {
+    "id": "58328580e4b0a506ca36032f",
+    "name": "sp2",
+    "title": "sp2",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "createdAt": "2016-11-21T05:26:24.637+0000",
+    "updatedAt": "2016-11-21T05:26:24.637+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328573e4b0a506ca360308/spaces/58328580e4b0a506ca36032f",
+    "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/hikeon/catalogs/spacepool/spaces/sp2"
+  },
+  "catalog": {
+    "id": "58328573e4b0a506ca360308",
+    "orgId": "58328549e4b0a506ca36028d",
+    "name": "SpacePool - sp2",
+    "shortName": "spacepool",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/hikeon/spacepool",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/hikeon/spacepool",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/hikeon/spacepool",
+    "gatewayType": "DataPowerGateway",
+    "idp": "58328573e4b0a506ca360309",
+    "idps": [
+      "58328573e4b0a506ca360309"
+    ],
+    "availableRoles": [],
+    "default": false,
+    "autoDeploy": false,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": true,
+    "spaceIds": [
+      "58328573e4b0a506ca360311",
+      "5832857ce4b0a506ca360321",
+      "58328580e4b0a506ca36032f"
+    ],
+    "testAppEnabled": false,
+    "createdAt": "2016-11-21T05:26:11.492+0000",
+    "updatedAt": "2016-11-21T05:26:24.647+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328573e4b0a506ca360308",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "hikeon",
+    "spaces": [
+      {
+        "id": "58328573e4b0a506ca360311",
+        "name": "new-space",
+        "title": "New Space",
+        "description": "Automatically created space",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:26:11.525+0000",
+        "updatedAt": "2016-11-21T05:26:11.525+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328573e4b0a506ca360308/spaces/58328573e4b0a506ca360311",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/hikeon/catalogs/spacepool/spaces/new-space"
+      },
+      {
+        "id": "5832857ce4b0a506ca360321",
+        "name": "sp1",
+        "title": "sp1",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:26:20.594+0000",
+        "updatedAt": "2016-11-21T05:26:20.594+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328573e4b0a506ca360308/spaces/5832857ce4b0a506ca360321",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/hikeon/catalogs/spacepool/spaces/sp1"
+      },
+      {
+        "id": "58328580e4b0a506ca36032f",
+        "name": "sp2",
+        "title": "sp2",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:26:24.637+0000",
+        "updatedAt": "2016-11-21T05:26:24.637+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328573e4b0a506ca360308/spaces/58328580e4b0a506ca36032f",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/hikeon/catalogs/spacepool/spaces/sp2"
+      }
+    ],
+    "space": "58328580e4b0a506ca36032f"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 21:42:29 GMT-0500 (EST)"
+}

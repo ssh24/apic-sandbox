@@ -1,0 +1,169 @@
+{
+  "type": "onprem",
+  "org": {
+    "id": "58328543e4b0a506ca360271",
+    "name": "climbon",
+    "displayName": "Climb On",
+    "orgType": "apiProvider",
+    "status": "active",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false,
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271"
+  },
+  "id": "5832855ae4b0a506ca3602c55832855ae4b0a506ca3602ce",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "onpremc1"
+  },
+  "space": {
+    "id": "5832855ae4b0a506ca3602ce",
+    "name": "new-space",
+    "title": "New Space",
+    "description": "Automatically created space",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "createdAt": "2016-11-21T05:25:46.965+0000",
+    "updatedAt": "2016-11-21T05:25:46.965+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/5832855ae4b0a506ca3602c5/spaces/5832855ae4b0a506ca3602ce",
+    "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/climbon/catalogs/spacepool/spaces/new-space"
+  },
+  "catalog": {
+    "id": "5832855ae4b0a506ca3602c5",
+    "orgId": "58328543e4b0a506ca360271",
+    "name": "SpacePool - New Space",
+    "shortName": "spacepool",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/climbon/spacepool",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/climbon/spacepool",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/climbon/spacepool",
+    "gatewayType": "DataPowerGateway",
+    "idp": "5832855ae4b0a506ca3602c6",
+    "idps": [
+      "5832855ae4b0a506ca3602c6"
+    ],
+    "availableRoles": [],
+    "default": false,
+    "autoDeploy": false,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": true,
+    "spaceIds": [
+      "5832855ae4b0a506ca3602ce",
+      "58328564e4b0a506ca3602de",
+      "58328569e4b0a506ca3602ec"
+    ],
+    "testAppEnabled": false,
+    "createdAt": "2016-11-21T05:25:46.935+0000",
+    "updatedAt": "2016-11-21T05:26:01.721+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/5832855ae4b0a506ca3602c5",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "climbon",
+    "spaces": [
+      {
+        "id": "5832855ae4b0a506ca3602ce",
+        "name": "new-space",
+        "title": "New Space",
+        "description": "Automatically created space",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:25:46.965+0000",
+        "updatedAt": "2016-11-21T05:25:46.965+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/5832855ae4b0a506ca3602c5/spaces/5832855ae4b0a506ca3602ce",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/climbon/catalogs/spacepool/spaces/new-space"
+      },
+      {
+        "id": "58328564e4b0a506ca3602de",
+        "name": "sp1",
+        "title": "sp1",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:25:56.443+0000",
+        "updatedAt": "2016-11-21T05:25:56.443+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/5832855ae4b0a506ca3602c5/spaces/58328564e4b0a506ca3602de",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/climbon/catalogs/spacepool/spaces/sp1"
+      },
+      {
+        "id": "58328569e4b0a506ca3602ec",
+        "name": "sp2",
+        "title": "sp2",
+        "owner": {
+          "id": "58328540e4b0a506ca36026e",
+          "username": "ibmapim+steve@gmail.com",
+          "context": "apimanager",
+          "idpId": "583282d1e4b0a506ca35fb81",
+          "email": "ibmapim+steve@gmail.com",
+          "firstName": "Steve",
+          "lastName": "OrgOwner",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+          "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+        },
+        "createdAt": "2016-11-21T05:26:01.706+0000",
+        "updatedAt": "2016-11-21T05:26:01.706+0000",
+        "createdBy": "ibmapim+steve@gmail.com",
+        "updatedBy": "ibmapim+steve@gmail.com",
+        "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/5832855ae4b0a506ca3602c5/spaces/58328569e4b0a506ca3602ec",
+        "spaceConfigUrl": "apic-space://sjsldev060.dev.ciondemand.com/orgs/climbon/catalogs/spacepool/spaces/sp2"
+      }
+    ],
+    "space": "5832855ae4b0a506ca3602ce"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 16:06:29 GMT-0500 (EST)"
+}

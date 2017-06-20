@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: bm-test-snowdon
+  title: bm-test-snowdon
+  version: 1.0.0
+
+apis:
+  'bm-test-snowdon':
+    $ref: bm-test-snowdon.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

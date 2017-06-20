@@ -1,0 +1,24 @@
+product: 1.0.0
+info:
+  name: product
+  title: product
+  version: 1.0.0
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limits:
+      per-minute:
+        value: 100/minute
+        hard-limit: false
+apis:
+  api-test:
+    $ref: api-test_1.0.0_1.yaml
+  api-test_1:
+    $ref: api-test_1.0.0.yaml

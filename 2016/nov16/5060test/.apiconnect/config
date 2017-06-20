@@ -1,0 +1,77 @@
+us.apiconnect.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+sjsldev060.dev.ciondemand.com.meta:
+  formFactor: ON_PREMISES
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+cattailpeak.stratus.apim.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+nevis.stratus.apim.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+UI_Default_Server:
+  displayName: snowdon
+  host: snowdon.stratus.apim.ibmcloud.com
+  dedicated: true
+  name: snowdon
+snowdon.stratus.apim.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+grivola.cumulus.apim.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+au.apiconnect.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30
+eu.apiconnect.ibmcloud.com.meta:
+  formFactor: BLUEMIX_PUBLIC
+  serverCapabilities:
+    authTypes:
+      - basic
+      - token
+  toolkit:
+    version_recommended: 2.1.30
+    version_minimum: 2.1.30

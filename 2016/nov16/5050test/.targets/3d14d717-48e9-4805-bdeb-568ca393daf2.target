@@ -1,0 +1,135 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53'
+  id: 583345b30cf2aef8bc9bfc53
+  name: sakibcaibmcom-dev
+  status: active
+  orgType: apiProvider
+  displayName: sakib@ca.ibm.com (dev)
+  externalOrgId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalInviteOverride: 'https://new-console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalNativeOrgId: d4789a4c-2e71-4184-bd77-6e24d41906f7
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  id: 5836f9150cf23c3d04dcf986
+  orgId: 583345b30cf2aef8bc9bfc53
+  name: New Catalog 1
+  shortName: new-catalog-1
+  owner:
+    id: 57290d7f0cf28fe1c8d4b799
+    username: sakib@ca.ibm.com
+    context: apimanager
+    idpId: 58341db4e63b1219f0f068d1
+    email: sakib@ca.ibm.com
+    firstName: Sadman Sakib Hasan
+    lastName: ''
+    status: ACTIVE
+    lastLoginTime: '2016-11-24T14:27:52.641+0000'
+    url: 'https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799'
+  apiCenter: false
+  baseUrl: 'https://api.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/new-catalog-1'
+  portalType: BASIC
+  portalUrl: 'https://developer.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/new-catalog-1'
+  advPortalUrl: 'https://new-catalog-1-sakibcaibmcom-dev.developer.us.apiconnect.ibmcloud.com'
+  gatewayType: DataPowerGateway
+  idp: 56efd30e0cf24d8a758858b1
+  idps:
+    - 56efd30e0cf24d8a758858b1
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/PRODAPIC_APIMGMT_GATEWAY
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 5836f9150cf23c3d04dcf98e
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: c16fa3a6-0c19-4af8-b219-4452c9fb3953
+    clientSecret: aS5qB4qB8gH3uS2uF8lI6wJ4dC1tI8lE8bC8lB5wP8lV4pS2yB
+  createdAt: '2016-11-24T14:28:37.266+0000'
+  updatedAt: '2016-11-24T14:28:37.266+0000'
+  createdBy: sakib@ca.ibm.com
+  updatedBy: sakib@ca.ibm.com
+  url: >-
+    https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53/environments/5836f9150cf23c3d04dcf986
+  productDeploymentApprovalRequiredStates: []
+  orgName: sakibcaibmcom-dev
+space:
+  none: true
+app:
+  metadata:
+    guid: 349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+  entity:
+    guid: 349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+    name: newapp
+    routes:
+      - guid: f729d9c3-4308-41b4-b55a-6e85e7d84076
+        host: apiconnect-349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+        port: null
+        path: ''
+        domain:
+          guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+          name: sakibcaibmcom-dev.apic.mybluemix.net
+    running_instances: 0
+    services: []
+    available_domains:
+      - guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+        name: sakibcaibmcom-dev.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: af1d491d-30cd-4706-b20f-5ddc584fae78
+        name: sakibcaibmcom-cascon.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+        router_group_type: null
+    production: false
+    space_guid: fedec2c0-8b03-4d51-8521-b46a0f83c459
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: null
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: a752e31b-969c-4abb-802b-0b9723e21333
+    command: null
+    console: false
+    debug: null
+    staging_task_id: null
+    package_state: PENDING
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: false
+    docker_image: null
+    package_updated_at: null
+    detected_start_command: ''
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: 3d14d717-48e9-4805-bdeb-568ca393daf2
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+publishProducts: true
+specificProducts: true
+workspaceDir:
+  path: /Users/ssh/workspace/loopback/apic/nov16/5050test

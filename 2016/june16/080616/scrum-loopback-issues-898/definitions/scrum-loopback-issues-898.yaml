@@ -1,0 +1,887 @@
+paths:
+  /Notes:
+    post:
+      tags:
+        - Note
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: Note.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Note'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Note'
+      deprecated: false
+    put:
+      tags:
+        - Note
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: Note.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/Note'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Note'
+      deprecated: false
+    get:
+      tags:
+        - Note
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: Note.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Note'
+      deprecated: false
+  '/Notes/{id}/exists':
+    get:
+      tags:
+        - Note
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Note.exists__get_Notes_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/Notes/{id}':
+    head:
+      tags:
+        - Note
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'Note.exists__head_Notes_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - Note
+      summary: Find a model instance by id from the data source.
+      operationId: Note.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Note'
+      deprecated: false
+    delete:
+      tags:
+        - Note
+      summary: Delete a model instance by id from the data source.
+      operationId: Note.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - Note
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: Note.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Note'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Note'
+      deprecated: false
+  /Notes/findOne:
+    get:
+      tags:
+        - Note
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: Note.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Note'
+      deprecated: false
+  /Notes/update:
+    post:
+      tags:
+        - Note
+      summary: Update instances of the model matched by where from the data source.
+      operationId: Note.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/Note'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /Notes/count:
+    get:
+      tags:
+        - Note
+      summary: Count instances of the model matched by where from the data source.
+      operationId: Note.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /Notes/change-stream:
+    post:
+      tags:
+        - Note
+      summary: Create a change stream.
+      operationId: Note.createChangeStream__post_Notes_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - Note
+      summary: Create a change stream.
+      operationId: Note.createChangeStream__get_Notes_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /models:
+    post:
+      tags:
+        - model
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: model.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/model'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model'
+      deprecated: false
+    put:
+      tags:
+        - model
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: model.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/model'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model'
+      deprecated: false
+    get:
+      tags:
+        - model
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: model.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/model'
+      deprecated: false
+  '/models/{id}/exists':
+    get:
+      tags:
+        - model
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'model.exists__get_models_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/models/{id}':
+    head:
+      tags:
+        - model
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'model.exists__head_models_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - model
+      summary: Find a model instance by id from the data source.
+      operationId: model.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model'
+      deprecated: false
+    delete:
+      tags:
+        - model
+      summary: Delete a model instance by id from the data source.
+      operationId: model.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - model
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: model.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/model'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model'
+      deprecated: false
+  /models/findOne:
+    get:
+      tags:
+        - model
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: model.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model'
+      deprecated: false
+  /models/update:
+    post:
+      tags:
+        - model
+      summary: Update instances of the model matched by where from the data source.
+      operationId: model.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/model'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /models/count:
+    get:
+      tags:
+        - model
+      summary: Count instances of the model matched by where from the data source.
+      operationId: model.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /models/change-stream:
+    post:
+      tags:
+        - model
+      summary: Create a change stream.
+      operationId: model.createChangeStream__post_models_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - model
+      summary: Create a change stream.
+      operationId: model.createChangeStream__get_models_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+  /model1s:
+    post:
+      tags:
+        - model1
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: model1.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/model1'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model1'
+      deprecated: false
+    put:
+      tags:
+        - model1
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: model1.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/model1'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model1'
+      deprecated: false
+    get:
+      tags:
+        - model1
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: model1.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/model1'
+      deprecated: false
+  '/model1s/{id}/exists':
+    get:
+      tags:
+        - model1
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'model1.exists__get_model1s_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/model1s/{id}':
+    head:
+      tags:
+        - model1
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'model1.exists__head_model1s_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - model1
+      summary: Find a model instance by id from the data source.
+      operationId: model1.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model1'
+      deprecated: false
+    delete:
+      tags:
+        - model1
+      summary: Delete a model instance by id from the data source.
+      operationId: model1.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - model1
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: model1.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/model1'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model1'
+      deprecated: false
+  /model1s/findOne:
+    get:
+      tags:
+        - model1
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: model1.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/model1'
+      deprecated: false
+  /model1s/update:
+    post:
+      tags:
+        - model1
+      summary: Update instances of the model matched by where from the data source.
+      operationId: model1.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/model1'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /model1s/count:
+    get:
+      tags:
+        - model1
+      summary: Count instances of the model matched by where from the data source.
+      operationId: model1.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /model1s/change-stream:
+    post:
+      tags:
+        - model1
+      summary: Create a change stream.
+      operationId: model1.createChangeStream__post_model1s_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - model1
+      summary: Create a change stream.
+      operationId: model1.createChangeStream__get_model1s_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+definitions:
+  model1:
+    properties:
+      prop1:
+        type: string
+      id:
+        type: number
+        format: double
+    x-ibm-def: MyIBMDef
+    x-randomDef: MyRandomDef
+    additionalProperties: false
+  x-any:
+    properties: {}
+  Note:
+    properties:
+      title:
+        type: string
+      content:
+        type: string
+      id:
+        type: number
+        format: double
+    required:
+      - title
+    additionalProperties: false
+  model:
+    properties:
+      prop:
+        type: string
+      id:
+        type: number
+        format: double
+    x-ibm-def: MyIBMDef
+    x-randomDef: MyRandomDef
+    additionalProperties: false
+swagger: '2.0'
+info:
+  x-ibm-name: scrum-loopback-issues-898
+  version: 1.0.0
+  title: scrum-loopback-issues-898
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)

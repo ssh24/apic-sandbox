@@ -1,0 +1,19 @@
+{
+  "name": "T1",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "p1": {
+      "type": "number",
+      "required": false,
+      "description": "-- second --"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,157 @@
+{
+  "type": "bluemix",
+  "org": {
+    "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53",
+    "id": "583345b30cf2aef8bc9bfc53",
+    "name": "sakibcaibmcom-dev",
+    "status": "active",
+    "orgType": "apiProvider",
+    "displayName": "sakib@ca.ibm.com (dev)",
+    "externalOrgId": "fedec2c0-8b03-4d51-8521-b46a0f83c459",
+    "externalInviteOverride": "https://new-console.ng.bluemix.net/apis/catalog/invitation",
+    "externalSpaceId": "fedec2c0-8b03-4d51-8521-b46a0f83c459",
+    "externalNativeOrgId": "d4789a4c-2e71-4184-bd77-6e24d41906f7",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false
+  },
+  "id": "583467c10cf23c3d04daf99f583485bd0cf2da774726b1ed",
+  "server": {
+    "host": "us.apiconnect.ibmcloud.com",
+    "displayName": "nc1"
+  },
+  "space": {
+    "id": "583485bd0cf2da774726b1ed",
+    "name": "space1",
+    "title": "Space1",
+    "description": "",
+    "owner": {
+      "id": "57290d7f0cf28fe1c8d4b799",
+      "username": "sakib@ca.ibm.com",
+      "context": "apimanager",
+      "idpId": "58341db4e63b1219f0f068d1",
+      "email": "sakib@ca.ibm.com",
+      "firstName": "Sadman Sakib Hasan",
+      "lastName": "",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-22T17:51:19.310+0000",
+      "url": "https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799"
+    },
+    "createdAt": "2016-11-22T17:51:57.574+0000",
+    "updatedAt": "2016-11-22T17:51:57.574+0000",
+    "createdBy": "sakib@ca.ibm.com",
+    "updatedBy": "sakib@ca.ibm.com",
+    "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53/environments/583467c10cf23c3d04daf99f/spaces/583485bd0cf2da774726b1ed",
+    "spaceConfigUrl": "apic-space://us.apiconnect.ibmcloud.com/orgs/sakibcaibmcom-dev/catalogs/new-catalog-2/spaces/space1"
+  },
+  "catalog": {
+    "id": "583467c10cf23c3d04daf99f",
+    "orgId": "583345b30cf2aef8bc9bfc53",
+    "name": "New Catalog 2 - Space1",
+    "shortName": "new-catalog-2",
+    "owner": {
+      "id": "57290d7f0cf28fe1c8d4b799",
+      "username": "sakib@ca.ibm.com",
+      "context": "apimanager",
+      "idpId": "58341db4e63b1219f0f068d1",
+      "email": "sakib@ca.ibm.com",
+      "firstName": "Sadman Sakib Hasan",
+      "lastName": "",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-22T17:51:19.310+0000",
+      "url": "https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://api.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/new-catalog-2",
+    "portalType": "BASIC",
+    "portalUrl": "https://developer.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/new-catalog-2",
+    "advPortalUrl": "https://new-catalog-2-sakibcaibmcom-dev.developer.us.apiconnect.ibmcloud.com",
+    "gatewayType": "DataPowerGateway",
+    "idp": "56efd30e0cf24d8a758858b1",
+    "idps": [
+      "56efd30e0cf24d8a758858b1"
+    ],
+    "availableRoles": [
+      "viewer",
+      "developer"
+    ],
+    "default": false,
+    "autoDeploy": true,
+    "gatewayClusterUrl": "/gatewayClusters/PRODAPIC_APIMGMT_GATEWAY",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": true,
+    "spaceIds": [
+      "583467c10cf23c3d04daf9a7",
+      "583485bd0cf2da774726b1ed"
+    ],
+    "testAppEnabled": true,
+    "testAppCredentials": {
+      "clientId": "2cd617e3-74c9-4b5c-9ae2-f761cb97c0f5",
+      "clientSecret": "tF8cF0nW7mP4hC1lU3iF3yD2cB1eW2uN3hK2nO6hI2lP7qM5mS"
+    },
+    "createdAt": "2016-11-22T15:44:01.758+0000",
+    "updatedAt": "2016-11-22T17:52:02.463+0000",
+    "createdBy": "sakib@ca.ibm.com",
+    "updatedBy": "sakib@ca.ibm.com",
+    "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53/environments/583467c10cf23c3d04daf99f",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "sakibcaibmcom-dev",
+    "spaces": [
+      {
+        "id": "583467c10cf23c3d04daf9a7",
+        "name": "new-space",
+        "title": "New Space",
+        "description": "Automatically created space",
+        "owner": {
+          "id": "57290d7f0cf28fe1c8d4b799",
+          "username": "sakib@ca.ibm.com",
+          "context": "apimanager",
+          "idpId": "58341db4e63b1219f0f068d1",
+          "email": "sakib@ca.ibm.com",
+          "firstName": "Sadman Sakib Hasan",
+          "lastName": "",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-22T17:51:19.310+0000",
+          "url": "https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799"
+        },
+        "createdAt": "2016-11-22T15:44:01.922+0000",
+        "updatedAt": "2016-11-22T15:44:01.922+0000",
+        "createdBy": "sakib@ca.ibm.com",
+        "updatedBy": "sakib@ca.ibm.com",
+        "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53/environments/583467c10cf23c3d04daf99f/spaces/583467c10cf23c3d04daf9a7",
+        "spaceConfigUrl": "apic-space://us.apiconnect.ibmcloud.com/orgs/sakibcaibmcom-dev/catalogs/new-catalog-2/spaces/new-space"
+      },
+      {
+        "id": "583485bd0cf2da774726b1ed",
+        "name": "space1",
+        "title": "Space1",
+        "description": "",
+        "owner": {
+          "id": "57290d7f0cf28fe1c8d4b799",
+          "username": "sakib@ca.ibm.com",
+          "context": "apimanager",
+          "idpId": "58341db4e63b1219f0f068d1",
+          "email": "sakib@ca.ibm.com",
+          "firstName": "Sadman Sakib Hasan",
+          "lastName": "",
+          "status": "ACTIVE",
+          "lastLoginTime": "2016-11-22T17:51:19.310+0000",
+          "url": "https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799"
+        },
+        "createdAt": "2016-11-22T17:51:57.574+0000",
+        "updatedAt": "2016-11-22T17:51:57.574+0000",
+        "createdBy": "sakib@ca.ibm.com",
+        "updatedBy": "sakib@ca.ibm.com",
+        "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53/environments/583467c10cf23c3d04daf99f/spaces/583485bd0cf2da774726b1ed",
+        "spaceConfigUrl": "apic-space://us.apiconnect.ibmcloud.com/orgs/sakibcaibmcom-dev/catalogs/new-catalog-2/spaces/space1"
+      }
+    ],
+    "space": "583485bd0cf2da774726b1ed"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Tue Nov 22 2016 14:06:53 GMT-0500 (EST)"
+}

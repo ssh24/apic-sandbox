@@ -1,0 +1,69 @@
+type: onprem
+server:
+  host: sjsldev060.dev.ciondemand.com
+org:
+  url: 'https://sjsldev060.dev.ciondemand.com/v1/orgs/57f33cffe4b01582b2e85447'
+  id: 57f33cffe4b01582b2e85447
+  name: climbon
+  status: active
+  orgType: apiProvider
+  displayName: Climb On
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  id: 57f33d00e4b01582b2e85453
+  orgId: 57f33cffe4b01582b2e85447
+  name: Sandbox
+  shortName: sb
+  owner:
+    id: 57f33cfce4b01582b2e85444
+    username: ibmapim+steve@gmail.com
+    context: apimanager
+    idpId: 57f33a9ae4b01582b2e84d57
+    email: ibmapim+steve@gmail.com
+    firstName: Steve
+    lastName: OrgOwner
+    status: ACTIVE
+    lastLoginTime: '2016-10-04T19:03:19.345+0000'
+    url: 'https://sjsldev060.dev.ciondemand.com/v1/users/57f33cfce4b01582b2e85444'
+  apiCenter: false
+  baseUrl: 'https://sjsldev062.dev.ciondemand.com/climbon/sb'
+  portalType: BASIC
+  portalUrl: 'https://sjsldev060.dev.ciondemand.com/climbon/sb'
+  customPortalUrl: 'https://sjsldev061.dev.ciondemand.com/climbon/sb'
+  gatewayType: DataPowerGateway
+  idp: 57f33d00e4b01582b2e85454
+  idps:
+    - 57f33d00e4b01582b2e85454
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/57f33abee4b01582b2e84ddf
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 57f33d00e4b01582b2e8545c
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: ece43a71-bd4a-496f-8793-192fc6498498
+    clientSecret: sK5iX5yV3yS4uD8lF2tB1rE2aQ3yA2lS6mQ8vR3fM3sE2kU8gO
+  createdAt: '2016-10-04T05:24:16.251+0000'
+  updatedAt: '2016-10-04T05:24:16.251+0000'
+  createdBy: ibmapim+steve@gmail.com
+  updatedBy: ibmapim+steve@gmail.com
+  url: >-
+    https://sjsldev060.dev.ciondemand.com/v1/orgs/57f33cffe4b01582b2e85447/environments/57f33d00e4b01582b2e85453
+  productDeploymentApprovalRequiredStates: []
+  orgName: climbon
+space:
+  none: true
+app:
+  none: true
+id: ab0ba389-1046-47d0-b561-ec291cb897cf
+target: 1.0.0

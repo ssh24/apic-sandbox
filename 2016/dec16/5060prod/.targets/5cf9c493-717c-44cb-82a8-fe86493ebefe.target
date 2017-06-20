@@ -1,0 +1,87 @@
+type: onprem
+server:
+  host: apimdev1177.hursley.ibm.com
+org:
+  id: 584f47c8e4b0b0595f80b1fe
+  name: qa
+  displayName: qa
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://apimdev1177.hursley.ibm.com/v1/orgs/584f47c8e4b0b0595f80b1fe'
+catalog:
+  id: 5858501ce4b0b0595f80b2bb
+  orgId: 584f47c8e4b0b0595f80b1fe
+  name: New Catalog sakib
+  shortName: new-catalog-sakib
+  owner:
+    id: 584f47c8e4b0b0595f80b1f9
+    username: ivyho@ca.ibm.com
+    context: apimanager
+    idpId: 584f37a0e4b0b0595f80aae2
+    email: ivyho@ca.ibm.com
+    firstName: ivy
+    lastName: ho
+    status: ACTIVE
+    lastLoginTime: '2016-12-19T21:21:47.352+0000'
+    url: 'https://apimdev1177.hursley.ibm.com/v1/users/584f47c8e4b0b0595f80b1f9'
+  apiCenter: false
+  baseUrl: 'https://apimdev1179.hursley.ibm.com/qa/new-catalog-sakib'
+  portalType: BASIC
+  portalUrl: 'https://apimdev1177.hursley.ibm.com/qa/new-catalog-sakib'
+  customPortalUrl: 'https://apimdev1178.hursley.ibm.com/qa/new-catalog-sakib'
+  gatewayType: DataPowerGateway
+  idp: 584f47c9e4b0b0595f80b20b
+  idps:
+    - 584f47c9e4b0b0595f80b20b
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/584f37c0e4b0b0595f80ab6a
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 5858501ce4b0b0595f80b2c3
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: 03a18657-2b6f-4adb-80fb-51d1e193122e
+    clientSecret: G1cE6lK3cT4nO3sD1bV3vW2oG7hE4wB2jR5mH3wV1dG1qH5uA1
+  createdAt: '2016-12-19T21:24:44.939+0000'
+  updatedAt: '2016-12-19T21:24:44.939+0000'
+  createdBy: ivyho@ca.ibm.com
+  updatedBy: ivyho@ca.ibm.com
+  url: >-
+    https://apimdev1177.hursley.ibm.com/v1/orgs/584f47c8e4b0b0595f80b1fe/environments/5858501ce4b0b0595f80b2bb
+  productDeploymentApprovalRequiredStates: []
+  orgName: qa
+space:
+  none: true
+app:
+  runtime: liberty
+  bluemix: null
+  liberty:
+    collectiveName: candidatebuild
+    collectiveId: 58520e5ee4b0b0595f80b281
+    applicationName: testappsakib
+    applicationId: 58585016e4b0b0595f80b2b8
+    hostHeader: testappsakib.584f47c8e4b0b0595f80b1fe
+    username: admin
+    password: '****************'
+    controllerHosts:
+      - host: csx00109.canlab.ibm.com
+        port: 9443
+  name: testappsakib
+  title: testappsakib
+  id: 58585016e4b0b0595f80b2b8
+  orgName: 584f47c8e4b0b0595f80b1fe
+  fullId: >-
+    apic-app://apimdev1177.hursley.ibm.com/orgs/584f47c8e4b0b0595f80b1fe/apps/testappsakib
+id: 5cf9c493-717c-44cb-82a8-fe86493ebefe
+target: 1.0.0

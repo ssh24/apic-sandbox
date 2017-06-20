@@ -1,0 +1,48 @@
+swagger: '2.0'
+info:
+  x-ibm-name: testapi
+  title: testApi
+  version: 1.0.0
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /testapi
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+security:
+  - clientIdHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(target-url)$(request.path)
+          tls-profile: $(invoke-tls-profile)
+  catalogs:
+    sb:
+      properties:
+        runtime-url: >-
+          https://apiconnect-7e5ae34d-3ad1-40e4-bb59-82bbe40be149.sakibcaibmcom-dev.apic.mybluemix.net
+        invoke-tls-profile: 'client:Loopback-client'
+  properties:
+    runtime-url:
+      value: ''
+      description: ''
+      encoded: false
+    invoke-tls-profile:
+      value: ''
+      description: ''
+      encoded: false
+paths: {}
+definitions: {}
+tags: []

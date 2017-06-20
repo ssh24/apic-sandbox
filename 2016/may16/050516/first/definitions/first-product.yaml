@@ -1,0 +1,23 @@
+product: 1.0.0
+info:
+  name: first
+  title: first
+  version: 1.0.0
+apis:
+  first:
+    $ref: first.yaml
+  firstt1:
+    $ref: firstt1_1.0.0.yaml
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

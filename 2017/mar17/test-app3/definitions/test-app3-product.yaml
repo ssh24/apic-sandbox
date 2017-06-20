@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: test-app3
+  title: test-app3
+  version: 1.0.0
+
+apis:
+  'test-app3':
+    $ref: test-app3.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

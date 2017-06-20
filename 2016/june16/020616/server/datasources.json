@@ -1,0 +1,45 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "db2": {
+    "host": "",
+    "port": 0,
+    "database": "",
+    "password": "",
+    "name": "db2",
+    "dsn": "",
+    "user": "",
+    "connector": "db2"
+  },
+  "t1": {
+    "host": "",
+    "port": 0,
+    "database": "",
+    "password": "",
+    "name": "t1",
+    "dsn": "",
+    "user": "",
+    "connector": "db2"
+  },
+  "t2": {
+    "host": "",
+    "port": 0,
+    "database": "",
+    "password": "",
+    "name": "t2",
+    "dsn": "",
+    "user": "",
+    "connector": "db2"
+  },
+  "t3": {
+    "url": "",
+    "database": "",
+    "username": "",
+    "password": "",
+    "name": "t3",
+    "modelIndex": "",
+    "connector": "cloudant"
+  }
+}

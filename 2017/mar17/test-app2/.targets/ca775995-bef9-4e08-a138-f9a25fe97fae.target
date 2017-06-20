@@ -1,0 +1,81 @@
+type: bluemix
+server:
+  displayName: Hogan
+  host: hogan.apiconnect.ibmcloud.com
+  dedicated: true
+  name: hogan
+org:
+  id: 58dc1c2c0cf24742f57466da
+  name: sakibcaibmcom-dev
+  displayName: sakib@ca.ibm.com (dev)
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://hogan.apiconnect.ibmcloud.com/v1/orgs/58dc1c2c0cf24742f57466da'
+  externalOrgId: aab9fa05-f276-4f61-a08c-33a58f493098
+  externalInviteOverride: 'https://console.stage1.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: aab9fa05-f276-4f61-a08c-33a58f493098
+  externalNativeOrgId: 30f04756-3b67-4299-bd85-c68e92b06991
+  bluemix:
+    inviteUri: 'https://console.stage1.ng.bluemix.net/apis/catalog/invitation'
+    organization: 30f04756-3b67-4299-bd85-c68e92b06991
+    space: aab9fa05-f276-4f61-a08c-33a58f493098
+catalog:
+  id: 58dc1c2c0cf24742f57466e6
+  orgId: 58dc1c2c0cf24742f57466da
+  name: Sandbox
+  shortName: sb
+  owner:
+    id: 58234dd20cf2f2aaca76b3bd
+    username: sakib@ca.ibm.com
+    context: apimanager
+    idpId: 582afd4c2d57603714942b95
+    email: sakib@ca.ibm.com
+    firstName: sakib@ca.ibm.com
+    lastName: ''
+    status: ACTIVE
+    lastLoginTime: '2016-11-29T14:42:07.664+0000'
+    url: 'https://hogan.apiconnect.ibmcloud.com/v1/users/58234dd20cf2f2aaca76b3bd'
+  apiCenter: false
+  baseUrl: 'https://api.hogan.apiconnect.ibmcloud.com/sakibcaibmcom-dev/sb'
+  portalType: BASIC
+  portalUrl: 'https://developer.hogan.apiconnect.ibmcloud.com/sakibcaibmcom-dev/sb'
+  advPortalUrl: 'https://sb-sakibcaibmcom-dev.developer.hogan.apiconnect.ibmcloud.com'
+  gatewayType: DataPowerGateway
+  idp: 58dc1c2d0cf24742f57466e7
+  idps:
+    - 58dc1c2d0cf24742f57466e7
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/PREPRODAPIC_APIMGMT_GATEWAY
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 58dc1c2d0cf24742f57466ef
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: d4bc9816-7b26-4f9e-b1dd-7e58f87380de
+    clientSecret: rL5hW0kC2mH1uX1bP8jK6oM4cL7xJ1dG7uA3dY4vF5gO4uO4uX
+  createdAt: '2017-03-29T20:42:21.052+0000'
+  updatedAt: '2017-03-29T20:42:21.052+0000'
+  createdBy: apim-saas@wwpdl.vnet.ibm.com
+  updatedBy: apim-saas@wwpdl.vnet.ibm.com
+  url: >-
+    https://hogan.apiconnect.ibmcloud.com/v1/orgs/58dc1c2c0cf24742f57466da/environments/58dc1c2c0cf24742f57466e6
+  productDeploymentApprovalRequiredStates: []
+  orgName: sakibcaibmcom-dev
+space:
+  none: true
+app:
+  new: true
+  name: test-app
+id: ca775995-bef9-4e08-a138-f9a25fe97fae
+target: 1.0.0

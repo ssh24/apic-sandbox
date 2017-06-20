@@ -1,0 +1,38 @@
+type: onprem
+server:
+  host: apim5040.rtp.raleigh.ibm.com
+org:
+  id: 5930dd9be4b0a0cbac6738cb
+  name: org1
+  displayName: org1
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://apim5040.rtp.raleigh.ibm.com/v1/orgs/5930dd9be4b0a0cbac6738cb'
+catalog:
+  none: true
+space:
+  none: true
+app:
+  name: test-app
+  title: test-app
+  id: 5942ab8be4b0a0cbac673bc6
+  runtime: liberty
+  liberty:
+    collectiveName: apicc1
+    collectiveId: 5930df3ae4b0a0cbac6738ee
+    applicationName: test-app
+    applicationId: 5942ab8be4b0a0cbac673bc6
+    hostHeader: test-app.undefined
+    username: admin
+    password: '****************'
+    controllerHosts:
+      - host: apicc1.rtp.raleigh.ibm.com
+        port: 9443
+  fullId: >-
+    apic-app://apim5040.rtp.raleigh.ibm.com/orgs/5930dd9be4b0a0cbac6738cb/apps/test-app
+id: 554676af-74eb-4dcb-a132-88291c726724
+target: 1.0.0

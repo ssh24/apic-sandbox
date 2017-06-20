@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: pmr-471774
+  title: pmr-471774
+  version: 1.0.0
+
+apis:
+  'pmr-471774':
+    $ref: pmr-471774.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

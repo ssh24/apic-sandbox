@@ -1,0 +1,5 @@
+UI_Default_Server:
+  displayName: Bluemix Hogan
+  host: hogan.apiconnect.ibmcloud.com
+  dedicated: true
+  name: bluemix-hogan

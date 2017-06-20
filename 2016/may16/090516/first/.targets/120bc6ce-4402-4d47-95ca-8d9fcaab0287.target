@@ -1,0 +1,48 @@
+type: onprem
+server:
+  host: sjsldev180.dev.ciondemand.com
+org:
+  url: 'https://sjsldev180.dev.ciondemand.com/v1/orgs/57305a46e4b02cbe66d446ca'
+  id: 57305a46e4b02cbe66d446ca
+  name: climbon
+  status: active
+  orgType: apiProvider
+  displayName: Climb On
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+catalog:
+  id: 57305a69e4b02cbe66d446e8
+  shortName: staging
+  name: Staging
+  sandbox: false
+app:
+  runtime: liberty
+  bluemix: null
+  liberty:
+    collectiveName: v5001
+    collectiveId: 5730dab3e4b02cbe66d44921
+    applicationName: t1app
+    applicationId: 5731190fe4b02cbe66d44a41
+    hostHeader: t1app.57305a46e4b02cbe66d446ca
+    username: admin
+    password: '****************'
+    controllerHosts:
+      - host: apiconnect-ihs.sl.strongloop.com
+        port: 9443
+  name: t1app
+  title: T1App
+  id: 5731190fe4b02cbe66d44a41
+  orgName: 57305a46e4b02cbe66d446ca
+  fullId: >-
+    apic-app://sjsldev180.dev.ciondemand.com/orgs/57305a46e4b02cbe66d446ca/apps/t1app
+id: 120bc6ce-4402-4d47-95ca-8d9fcaab0287
+target: 1.0.0
+publishApp: true
+workspaceDir:
+  name: first
+  path: /Users/ssh/Desktop/API/APIC/090516/first
+  id: 11
+  displayName: first
+  type: project
+  projectType: loopback

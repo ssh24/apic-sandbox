@@ -1,0 +1,77 @@
+{
+  "type": "onprem",
+  "org": {
+    "id": "58328543e4b0a506ca360271",
+    "name": "climbon",
+    "displayName": "Climb On",
+    "orgType": "apiProvider",
+    "status": "active",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false,
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271"
+  },
+  "id": "58328543e4b0a506ca36027d",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "onpremc1"
+  },
+  "catalog": {
+    "id": "58328543e4b0a506ca36027d",
+    "orgId": "58328543e4b0a506ca360271",
+    "name": "Sandbox",
+    "shortName": "sb",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/climbon/sb",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/climbon/sb",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/climbon/sb",
+    "gatewayType": "DataPowerGateway",
+    "idp": "58328544e4b0a506ca36027e",
+    "idps": [
+      "58328544e4b0a506ca36027e"
+    ],
+    "availableRoles": [
+      "developer",
+      "viewer"
+    ],
+    "default": false,
+    "autoDeploy": true,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": false,
+    "spaceIds": [
+      "58328544e4b0a506ca360286"
+    ],
+    "testAppEnabled": true,
+    "testAppCredentials": {
+      "clientId": "2c8004d9-18d6-46bb-9e49-52531aa19a5b",
+      "clientSecret": "T4rQ5wY0hC8uR7jF1kX2tS0jE8kT4iE5kD5oJ6fM7fC7lE6eF2"
+    },
+    "createdAt": "2016-11-21T05:25:24.403+0000",
+    "updatedAt": "2016-11-21T05:25:24.403+0000",
+    "createdBy": "admin",
+    "updatedBy": "admin",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/58328543e4b0a506ca36027d",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "climbon"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 16:06:29 GMT-0500 (EST)"
+}

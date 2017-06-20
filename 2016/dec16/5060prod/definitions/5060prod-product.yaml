@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: 5060prod
+  title: 5060prod
+  version: 1.0.0
+
+apis:
+  '5060prod':
+    $ref: 5060prod.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

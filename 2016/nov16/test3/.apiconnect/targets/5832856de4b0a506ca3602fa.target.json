@@ -1,0 +1,61 @@
+{
+  "type": "onprem",
+  "id": "5832856de4b0a506ca3602fa",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "on-prem"
+  },
+  "catalog": {
+    "id": "5832856de4b0a506ca3602fa",
+    "orgId": "58328549e4b0a506ca36028d",
+    "name": "Quality Assurance",
+    "shortName": "qa",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/hikeon/qa",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/hikeon/qa",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/hikeon/qa",
+    "gatewayType": "DataPowerGateway",
+    "idp": "5832856de4b0a506ca3602fb",
+    "idps": [
+      "5832856de4b0a506ca3602fb"
+    ],
+    "availableRoles": [
+      "developer",
+      "viewer"
+    ],
+    "default": false,
+    "autoDeploy": false,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": false,
+    "spaceIds": [
+      "5832856de4b0a506ca360303"
+    ],
+    "testAppEnabled": false,
+    "createdAt": "2016-11-21T05:26:05.792+0000",
+    "updatedAt": "2016-11-21T05:26:05.792+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/5832856de4b0a506ca3602fa",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "hikeon"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 21:42:29 GMT-0500 (EST)"
+}

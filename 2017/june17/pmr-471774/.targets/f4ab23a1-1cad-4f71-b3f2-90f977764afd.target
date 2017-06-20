@@ -1,0 +1,33 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  id: 59444aa70cf280944aff02de
+  name: slbldcaibmcom-apiconnect
+  displayName: slbld@ca.ibm.com (apiconnect)
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/59444aa70cf280944aff02de'
+  externalOrgId: f32446f5-cedd-4772-b9c6-20b2ea893606
+  externalInviteOverride: 'https://console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: f32446f5-cedd-4772-b9c6-20b2ea893606
+  externalNativeOrgId: 17796a50-0712-4cd0-bcc1-9b2c99e3e83a
+  bluemix:
+    inviteUri: 'https://console.ng.bluemix.net/apis/catalog/invitation'
+    organization: 17796a50-0712-4cd0-bcc1-9b2c99e3e83a
+    space: f32446f5-cedd-4772-b9c6-20b2ea893606
+catalog:
+  none: true
+space:
+  none: true
+app:
+  new: true
+  name: pmr-471774-app
+id: f4ab23a1-1cad-4f71-b3f2-90f977764afd
+target: 1.0.0

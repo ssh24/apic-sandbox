@@ -1,0 +1,33 @@
+{
+  "type": "bluemix",
+  "org": {
+    "url": "https://us.apiconnect.ibmcloud.com/v1/orgs/56f2ec600cf287fc7496e9ee",
+    "id": "56f2ec600cf287fc7496e9ee",
+    "name": "slbldcaibmcom-cliautomation",
+    "status": "active",
+    "orgType": "apiProvider",
+    "displayName": "slbld@ca.ibm.com (cliAutomation)",
+    "externalOrgId": "54f27952-76c1-4746-b0f1-8b12aeb4cfdf",
+    "externalInviteOverride": "https://new-console.ng.bluemix.net/apis/catalog/invitation",
+    "externalSpaceId": "54f27952-76c1-4746-b0f1-8b12aeb4cfdf",
+    "externalNativeOrgId": "17796a50-0712-4cd0-bcc1-9b2c99e3e83a",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false
+  },
+  "id": "56f2ec610cf287fc7496e9f5",
+  "server": {
+    "host": "us.apiconnect.ibmcloud.com",
+    "displayName": "test-server-bm"
+  },
+  "catalog": {
+    "id": "56f2ec610cf287fc7496e9f5",
+    "shortName": "sb",
+    "name": "Sandbox",
+    "sandbox": true
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Tue Oct 04 2016 20:50:21 GMT-0400 (EDT)"
+}

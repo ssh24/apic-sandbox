@@ -1,0 +1,73 @@
+{
+  "type": "onprem",
+  "org": {
+    "id": "58328543e4b0a506ca360271",
+    "name": "climbon",
+    "displayName": "Climb On",
+    "orgType": "apiProvider",
+    "status": "active",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false,
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271"
+  },
+  "id": "58328555e4b0a506ca3602b7",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "onpremc1"
+  },
+  "catalog": {
+    "id": "58328555e4b0a506ca3602b7",
+    "orgId": "58328543e4b0a506ca360271",
+    "name": "Staging",
+    "shortName": "staging",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/climbon/staging",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/climbon/staging",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/climbon/staging",
+    "gatewayType": "DataPowerGateway",
+    "idp": "58328555e4b0a506ca3602b8",
+    "idps": [
+      "58328555e4b0a506ca3602b8"
+    ],
+    "availableRoles": [
+      "developer",
+      "viewer"
+    ],
+    "default": false,
+    "autoDeploy": false,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": false,
+    "spaceIds": [
+      "58328555e4b0a506ca3602c0"
+    ],
+    "testAppEnabled": false,
+    "createdAt": "2016-11-21T05:25:41.252+0000",
+    "updatedAt": "2016-11-21T05:25:41.252+0000",
+    "createdBy": "ibmapim+steve@gmail.com",
+    "updatedBy": "ibmapim+steve@gmail.com",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328543e4b0a506ca360271/environments/58328555e4b0a506ca3602b7",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "climbon"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 16:10:35 GMT-0500 (EST)"
+}

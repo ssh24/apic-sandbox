@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: scrum-loopback-issues-898
+  title: scrum-loopback-issues-898
+  version: 1.0.0
+
+apis:
+  'scrum-loopback-issues-898':
+    $ref: scrum-loopback-issues-898.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

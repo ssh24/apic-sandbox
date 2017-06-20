@@ -1,0 +1,22 @@
+type: onprem
+server:
+  host: sjsldev180.dev.ciondemand.com
+org:
+  url: 'https://sjsldev180.dev.ciondemand.com/v1/orgs/57305a46e4b02cbe66d446ca'
+  id: 57305a46e4b02cbe66d446ca
+  name: climbon
+  status: active
+  orgType: apiProvider
+  displayName: Climb On
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+catalog:
+  id: 57305a49e4b02cbe66d446d1
+  shortName: sb
+  name: Sandbox
+  sandbox: true
+app:
+  none: true
+id: eecdbbfb-cf8e-4fd3-9e4a-dce026471a62
+target: 1.0.0

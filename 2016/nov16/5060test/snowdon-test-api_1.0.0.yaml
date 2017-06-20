@@ -1,0 +1,33 @@
+swagger: '2.0'
+info:
+  x-ibm-name: snowdon-test-api
+  title: snowdon-test-api
+  version: 1.0.0
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /snowdon-test-api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+security:
+  - clientIdHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - invoke:
+          target-url: 'http://smtp.hursley.ibm.com:25$(request.path)$(request.search)'
+          secure-gateway: true
+paths: {}
+definitions: {}
+tags: []

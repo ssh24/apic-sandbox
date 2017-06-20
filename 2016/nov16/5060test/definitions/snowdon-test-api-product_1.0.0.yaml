@@ -1,0 +1,21 @@
+product: 1.0.0
+info:
+  name: snowdon-test-api-product
+  title: snowdon-test-api product
+  version: 1.0.0
+apis:
+  snowdon-test-api:
+    $ref: snowdon-test-api_1.0.0.yaml
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

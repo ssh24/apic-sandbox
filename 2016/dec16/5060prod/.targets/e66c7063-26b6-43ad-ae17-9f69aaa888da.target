@@ -1,0 +1,76 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/585846d10cf257d040a85b70'
+  id: 585846d10cf257d040a85b70
+  name: sakibcaibmcom-dev
+  status: active
+  orgType: apiProvider
+  displayName: sakib@ca.ibm.com (dev)
+  externalOrgId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalInviteOverride: 'https://new-console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalNativeOrgId: d4789a4c-2e71-4184-bd77-6e24d41906f7
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  id: 585846d10cf257d040a85b7c
+  orgId: 585846d10cf257d040a85b70
+  name: Sandbox
+  shortName: sb
+  owner:
+    id: 57290d7f0cf28fe1c8d4b799
+    username: sakib@ca.ibm.com
+    context: apimanager
+    idpId: 58341db4e63b1219f0f068d1
+    email: sakib@ca.ibm.com
+    firstName: Sadman Sakib Hasan
+    lastName: ''
+    status: ACTIVE
+    lastLoginTime: '2016-12-07T19:44:13.063+0000'
+    url: 'https://us.apiconnect.ibmcloud.com/v1/users/57290d7f0cf28fe1c8d4b799'
+  apiCenter: false
+  baseUrl: 'https://api.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/sb'
+  portalType: BASIC
+  portalUrl: 'https://developer.us.apiconnect.ibmcloud.com/sakibcaibmcom-dev/sb'
+  advPortalUrl: 'https://sb-sakibcaibmcom-dev.developer.us.apiconnect.ibmcloud.com'
+  gatewayType: DataPowerGateway
+  idp: 585846d20cf257d040a85b7d
+  idps:
+    - 585846d20cf257d040a85b7d
+  availableRoles:
+    - developer
+    - viewer
+  default: false
+  autoDeploy: true
+  gatewayClusterUrl: /gatewayClusters/PRODAPIC_APIMGMT_GATEWAY
+  restrictedDeployment: false
+  invitationEnabled: true
+  selfSignUpEnabled: true
+  spaceEnabled: false
+  spaceIds:
+    - 585846d20cf257d040a85b85
+  testAppEnabled: true
+  testAppCredentials:
+    clientId: 1f3dd65e-b38d-4c64-8805-ecb04bee2374
+    clientSecret: S6nT1gL3dH7qF2mP4cU2oJ2fU6eB2hC1lQ6yG6oB1dE2iO6sT6
+  createdAt: '2016-12-19T20:45:06.021+0000'
+  updatedAt: '2016-12-19T20:45:06.021+0000'
+  createdBy: apim-ops@wwpdl.vnet.ibm.com
+  updatedBy: apim-ops@wwpdl.vnet.ibm.com
+  url: >-
+    https://us.apiconnect.ibmcloud.com/v1/orgs/585846d10cf257d040a85b70/environments/585846d10cf257d040a85b7c
+  productDeploymentApprovalRequiredStates: []
+  orgName: sakibcaibmcom-dev
+space:
+  none: true
+app:
+  new: true
+  name: newapp
+id: e66c7063-26b6-43ad-ae17-9f69aaa888da
+target: 1.0.0

@@ -1,0 +1,7 @@
+{
+  "t2": {
+    "url": "abcd",
+    "name": "t2",
+    "connector": "cloudant"
+  }
+}

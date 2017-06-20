@@ -1,0 +1,20 @@
+{
+  "name": "model",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "x-ibm-def": "MyIBMDef",
+  "x-randomDef": "MyRandomDef",
+  "xIgnore": "shouldBeIgnored",
+  "properties": {
+    "prop": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

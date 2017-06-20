@@ -1,0 +1,65 @@
+{
+  "name": "loopback-connector-oracle",
+  "version": "2.4.8",
+  "description": "Loopback Oracle Connector",
+  "keywords": [
+    "StrongLoop",
+    "LoopBack",
+    "Oracle",
+    "DataSource",
+    "Connector"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "./run-tests"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "debug": "^2.1.1",
+    "loopback-connector": "^2.1.0",
+    "loopback-oracle-installer": "~1.4.0"
+  },
+  "config": {
+    "oracleUrl": "http://7e9918db41dd01dbf98e-ec15952f71452bc0809d79c86f5751b6.r22.cf1.rackcdn.com",
+    "oracleVersion": "1.8.0"
+  },
+  "devDependencies": {
+    "bluebird": "^3.3.3",
+    "loopback-datasource-juggler": "^2.28.0",
+    "mocha": "^2.1.0",
+    "rc": "^1.0.0",
+    "should": "^8.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strongloop/loopback-connector-oracle.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "readmeFilename": "README.md",
+  "gitHead": "84a646cf9238b47d9589091d737246f1acc9cb99",
+  "bugs": {
+    "url": "https://github.com/strongloop/loopback-connector-oracle/issues"
+  },
+  "homepage": "https://github.com/strongloop/loopback-connector-oracle#readme",
+  "_id": "loopback-connector-oracle@2.4.8",
+  "_shasum": "ff617f6cea0e41841592c8d0948477865fc369fc",
+  "_from": "loopback-connector-oracle@>=2.4.8 <3.0.0",
+  "_npmVersion": "2.15.3",
+  "_nodeVersion": "0.10.44",
+  "_npmUser": {
+    "name": "admin",
+    "email": "admin@strongloop.com"
+  },
+  "maintainers": [
+    {
+      "name": "admin",
+      "email": "admin@strongloop.com"
+    }
+  ],
+  "dist": {
+    "shasum": "ff617f6cea0e41841592c8d0948477865fc369fc",
+    "tarball": "http://apimdev1136.hursley.ibm.com:55501/loopback-connector-oracle/-/loopback-connector-oracle-2.4.8.tgz"
+  },
+  "_resolved": "http://apimdev1136.hursley.ibm.com:55501/loopback-connector-oracle/-/loopback-connector-oracle-2.4.8.tgz",
+  "readme": "ERROR: No README data found!"
+}

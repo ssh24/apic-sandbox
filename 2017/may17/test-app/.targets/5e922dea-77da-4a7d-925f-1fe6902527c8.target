@@ -1,0 +1,86 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  id: 590b762c0cf2b89247340776
+  name: sakibcaibmcom-dev
+  displayName: sakib@ca.ibm.com (dev)
+  orgType: apiProvider
+  status: active
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/590b762c0cf2b89247340776'
+  externalOrgId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalInviteOverride: 'https://console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalNativeOrgId: d4789a4c-2e71-4184-bd77-6e24d41906f7
+catalog:
+  none: true
+space:
+  none: true
+app:
+  metadata:
+    guid: 134756d4-c662-4937-b9c0-fd934a30e273
+  entity:
+    guid: 134756d4-c662-4937-b9c0-fd934a30e273
+    name: newapp-5050
+    routes:
+      - guid: 1916947d-93c8-42cd-8fc3-5f9b8a87d49d
+        host: apiconnect-134756d4-c662-4937-b9c0-fd934a30e273
+        port: null
+        path: ''
+        domain:
+          guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+          name: sakibcaibmcom-dev.apic.mybluemix.net
+    running_instances: 0
+    services: []
+    available_domains:
+      - guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+        name: sakibcaibmcom-dev.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: af1d491d-30cd-4706-b20f-5ddc584fae78
+        name: sakibcaibmcom-cascon.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+        router_group_type: null
+    production: false
+    space_guid: fedec2c0-8b03-4d51-8521-b46a0f83c459
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: null
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: c2f31374-aff8-43d9-b642-90d158be9679
+    command: null
+    console: false
+    debug: null
+    staging_task_id: null
+    package_state: PENDING
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: true
+    docker_image: null
+    package_updated_at: null
+    detected_start_command: ''
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: 5e922dea-77da-4a7d-925f-1fe6902527c8
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+workspaceDir:
+  path: /Users/ssh/workspace/apic loopback/apic/2017/may17/test-app

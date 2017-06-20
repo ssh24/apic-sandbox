@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "testDB": {
+    "name": "testDB",
+    "connector": "memory"
+  },
+  "newDB": {
+    "name": "newDB",
+    "connector": "memory"
+  }
+}

@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: 5060test
+  title: 5060test
+  version: 1.0.0
+
+apis:
+  '5060test':
+    $ref: 5060test.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

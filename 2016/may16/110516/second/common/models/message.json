@@ -1,0 +1,41 @@
+{
+  "name": "Message",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "p1": {
+      "type": "number",
+      "required": true
+    },
+    "p2": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "greet": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "msg",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "greeting",
+        "type": "string"
+      },
+      "http": {
+        "verb": "get"
+      }
+    }
+  }
+}

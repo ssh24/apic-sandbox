@@ -1,0 +1,1013 @@
+swagger: '2.0'
+info:
+  x-ibm-name: new-oauth
+  title: new-oauth
+  version: 1.0.1
+schemes:
+  - https
+  - http
+  - ws
+  - wss
+host: $(catalog.host)
+basePath: /new-oauth
+securityDefinitions:
+  api-key-1:
+    type: apiKey
+    description: ''
+    in: header
+    name: X-IBM-Client-Secret
+  clientID:
+    description: application's client_id
+    in: query
+    name: client_id
+    type: apiKey
+security:
+  - clientID: []
+    api-key-1: []
+paths:
+  /oauth2/authorize:
+    get:
+      produces:
+        - text/html
+      summary: endpoint for Authorization Code and Implicit grants
+      description: description
+      parameters:
+        - name: response_type
+          in: query
+          description: request an authorization code or or access token (implicit)
+          required: true
+          type: string
+          enum:
+            - code
+            - token
+        - name: scope
+          in: query
+          description: Scope being requested
+          type: string
+          required: true
+        - name: redirect_uri
+          in: query
+          type: string
+          description: URI where user is redirected to after authorization
+          required: false
+        - name: state
+          in: query
+          type: string
+          description: >-
+            This string will be echoed back to application when user is
+            redirected
+          required: false
+      responses:
+        '200':
+          description: An HTML form for authentication or authorization of this request.
+        '302':
+          description: >
+            Redirect to the clients redirect_uri containing one of the following
+
+            - **authorization code** for Authorization code grant
+
+            - **access token** for Implicity grant
+
+            - **error** in case of errors, such as the user has denied the
+            request
+      security:
+        - clientID: []
+    post:
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - text/html
+      summary: submit approval to authorization code or access token
+      description: >
+        Submit resource owners approval (or rejection) for the OAuth2 Server to
+        issue an
+
+        authorization code or access token to the application.
+      security: []
+      parameters:
+        - name: client_id
+          in: formData
+          description: application requesting the access code or token
+          required: true
+          type: string
+        - name: scope
+          in: formData
+          description: requested scope of this authorization
+          required: true
+          type: string
+        - name: resource-owner
+          in: formData
+          description: resource owners user name
+          required: true
+          type: string
+        - name: redirect_uri
+          in: formData
+          description: >-
+            URI the application is requesting this code or token to be
+            redirected to
+          required: true
+          type: string
+        - name: original-url
+          in: formData
+          description: URL of the original authorization request
+          required: true
+          type: string
+        - name: dp-state
+          in: formData
+          description: state information provided in the authorization form
+          required: true
+          type: string
+        - name: dp-data
+          in: formData
+          description: state information provided in the authorization form
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Cool
+  /oauth2/token:
+    post:
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      summary: Request Access Tokens
+      description: >
+        This endpoint allows requesting an access token following one of the
+        flows below:
+
+        - Authorization Code (exchange code for access token)
+
+        - Client Credentials (2-legged, there isnt resource owner information)
+
+        - Resource Owner Password Credentials (2-legged, client provides
+        resource owner name and password)
+
+        - Refresh Token (exchange refresh token for a new access code)
+
+
+        The table below indicates the required parameters for each specific
+        grant_type options.
+
+        Empty cells indicate a parameter is ignored for that specific grant
+        type.
+
+
+        Client authentication:
+
+        - Confidential clients should authenticate using HTTP Basic
+        Authentication. Alternatively, they may post
+          their client_id and client_secret information as a formData parameter.
+        - Public clients should send their client_id as formData parameter.
+
+
+        | grant_type           | code       | client_credentials | password    |
+        refresh_token |
+
+        |----------------------|------------|--------------------|-------------|---------------|
+
+        | client_id            | required*  | required*          | required*   |
+        required*     |
+
+        | client_secret        | required*  | required*          | required*   |
+        required*     |
+
+        | code                 | required   |                    |            
+        |               |
+
+        | redirect_uri         | required   |                    |            
+        |               |
+
+        | username             |            |                    | required   
+        |               |
+
+        | password             |            |                    | required   
+        |               |
+
+        | scope                |            | optional           | optional   
+        |               |
+
+        | refresh_token        |            |                    |             |
+        required      |
+
+
+        The implicit grant requests, see /oauth2/authorize.
+      security: []
+      parameters:
+        - name: grant_type
+          in: formData
+          description: Type of grant
+          type: string
+          required: true
+          enum:
+            - authorization_code
+            - password
+            - client_credentials
+            - refresh_token
+        - name: client_id
+          in: formData
+          description: >-
+            Application client ID, can be provided in formData or using HTTP
+            Basic Authentication
+          required: false
+          type: string
+        - name: client_secret
+          in: formData
+          description: >-
+            Application secret, must be provided in formData or using HTTP Basic
+            Authentication
+          required: false
+          type: string
+        - name: code
+          in: formData
+          description: Authorization code provided by the /oauth2/authorize endpoint
+          required: false
+          type: string
+        - name: redirect_uri
+          in: formData
+          description: >-
+            required only if the redirect_uri parameter was included in the
+            authorization request /oauth2/authorize; their values MUST be
+            identical.
+          required: false
+          type: string
+        - name: username
+          in: formData
+          type: string
+          description: Resource owner username
+          required: false
+        - name: password
+          in: formData
+          type: string
+          description: Resource owner password
+          required: false
+        - name: scope
+          in: formData
+          type: string
+          description: Scope being requested
+          required: false
+        - name: refresh_token
+          in: formData
+          type: string
+          description: >-
+            The refresh token that the client wants to exchange for a new access
+            token (refresh_token grant_type)
+          required: false
+      responses:
+        '200':
+          description: 'json document containing token, etc.'
+          schema:
+            $ref: '#/definitions/access_token_response'
+        '400':
+          description: json document that may contain additional details about the failure
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  phase: specified
+  oauth2:
+    client-type: confidential
+    scopes:
+      scope1: Description 1
+      scope2: Description 2
+      scope3: Description 3
+    grants:
+      - application
+      - password
+      - accessCode
+      - implicit
+    identity-extraction:
+      type: default-form
+    authentication:
+      x-ibm-authentication-url:
+        url: 'https://example.com/auth/url'
+        tls-profile: ''
+    authorization:
+      type: authenticated
+    access-token:
+      ttl: 3600
+    refresh-token:
+      count: 2048
+      ttl: 2682000
+    revocation:
+      url: ''
+      tls-profile: ''
+    metadata:
+      metadata-url:
+        url: ''
+        tls-profile: ''
+  assembly:
+    execute:
+      - if:
+          title: if
+          condition: 'true'
+          execute: []
+          version: 1.0.0
+  properties:
+    new-property-1:
+      value: ''
+      description: ''
+      encoded: true
+  targets:
+    Weather:
+      swagger: '2.0'
+      info:
+        title: Weather
+        description: ''
+        x-ibm-name: weather
+        version: 1.0.0
+      schemes:
+        - https
+      basePath: /Weather
+      produces:
+        - application/xml
+      consumes:
+        - text/xml
+      securityDefinitions:
+        clientID:
+          type: apiKey
+          name: X-IBM-Client-Id
+          in: header
+          description: ''
+      security:
+        - clientID: []
+      x-ibm-configuration:
+        type: wsdl
+        wsdl-definition:
+          wsdl: weather.wsdl
+          service: Weather
+          port: WeatherSoap
+          soap-version: '1.1'
+        assembly:
+          execute:
+            - proxy:
+                title: proxy
+                target-url: 'http://wsf.cdyne.com/WeatherWS/Weather.asmx'
+        gateway: datapower-gateway
+        enforced: true
+        testable: true
+        phase: realized
+        cors:
+          enabled: true
+      paths:
+        /GetWeatherInformation:
+          post:
+            summary: Operation GetWeatherInformation
+            description: Gets Information for each WeatherID
+            operationId: GetWeatherInformation
+            x-ibm-soap:
+              soap-action: 'http://ws.cdyne.com/WeatherWS/GetWeatherInformation'
+              soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetWeatherInformation'
+            parameters:
+              - in: body
+                name: body
+                required: true
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetWeatherInformationInput
+            responses:
+              default:
+                description: ''
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetWeatherInformationOutput
+        /GetCityForecastByZIP:
+          post:
+            summary: Operation GetCityForecastByZIP
+            description: >-
+              Allows you to get your City Forecast Over the Next 7 Days, which
+              is updated hourly. U.S. Only
+            operationId: GetCityForecastByZIP
+            x-ibm-soap:
+              soap-action: 'http://ws.cdyne.com/WeatherWS/GetCityForecastByZIP'
+              soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetCityForecastByZIP'
+            parameters:
+              - in: body
+                name: body
+                required: true
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityForecastByZIPInput
+            responses:
+              default:
+                description: ''
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityForecastByZIPOutput
+        /GetCityWeatherByZIP:
+          post:
+            summary: Operation GetCityWeatherByZIP
+            description: >-
+              Allows you to get your City's Weather, which is updated hourly.
+              U.S. Only
+            operationId: GetCityWeatherByZIP
+            x-ibm-soap:
+              soap-action: 'http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP'
+              soap-operation: '{http://ws.cdyne.com/WeatherWS/}GetCityWeatherByZIP'
+            parameters:
+              - in: body
+                name: body
+                required: true
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityWeatherByZIPInput
+            responses:
+              default:
+                description: ''
+                schema:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityWeatherByZIPOutput
+      definitions:
+        Security:
+          xml:
+            namespace: >-
+              http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+            prefix: wsse
+          type: object
+          properties:
+            UsernameToken:
+              type: object
+              properties:
+                Username:
+                  type: string
+                Password:
+                  type: string
+        GetWeatherInformationInput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Header:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetWeatherInformationHeader
+                Body:
+                  type: object
+                  properties:
+                    GetWeatherInformation:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetWeatherInformation_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Header>
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+               <UsernameToken>
+                <Username>string</Username>
+                <Password>string</Password>
+               </UsernameToken>
+              </wsse:Security>
+             </soap-env:Header>
+             <soap-env:Body>
+              <tns:GetWeatherInformation xmlns:tns="http://ws.cdyne.com/WeatherWS/"></tns:GetWeatherInformation>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetWeatherInformationHeader:
+          type: object
+          properties:
+            Security:
+              $ref: '#/x-ibm-configuration/targets/Weather/definitions/Security'
+        GetWeatherInformationOutput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Body:
+                  type: object
+                  properties:
+                    GetWeatherInformationResponse:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetWeatherInformationResponse_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Body>
+              <tns:GetWeatherInformationResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+               <tns:GetWeatherInformationResult>
+                <tns:WeatherDescription><!-- between zero and unlimited repetitions of this element -->
+                 <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+                 <tns:Description>string</tns:Description>
+                 <tns:PictureURL>string</tns:PictureURL>
+                </tns:WeatherDescription>
+               </tns:GetWeatherInformationResult>
+              </tns:GetWeatherInformationResponse>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetCityForecastByZIPInput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Header:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityForecastByZIPHeader
+                Body:
+                  type: object
+                  properties:
+                    GetCityForecastByZIP:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetCityForecastByZIP_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Header>
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+               <UsernameToken>
+                <Username>string</Username>
+                <Password>string</Password>
+               </UsernameToken>
+              </wsse:Security>
+             </soap-env:Header>
+             <soap-env:Body>
+              <tns:GetCityForecastByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+               <tns:ZIP>string</tns:ZIP>
+              </tns:GetCityForecastByZIP>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetCityForecastByZIPHeader:
+          type: object
+          properties:
+            Security:
+              $ref: '#/x-ibm-configuration/targets/Weather/definitions/Security'
+        GetCityForecastByZIPOutput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Body:
+                  type: object
+                  properties:
+                    GetCityForecastByZIPResponse:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetCityForecastByZIPResponse_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Body>
+              <tns:GetCityForecastByZIPResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+               <tns:GetCityForecastByZIPResult>
+                <tns:Success><!-- mandatory -->true</tns:Success>
+                <tns:ResponseText>string</tns:ResponseText>
+                <tns:State>string</tns:State>
+                <tns:City>string</tns:City>
+                <tns:WeatherStationCity>string</tns:WeatherStationCity>
+                <tns:ForecastResult>
+                 <tns:Forecast><!-- between zero and unlimited repetitions of this element -->
+                  <tns:Date><!-- mandatory -->2016-04-18T14:07:37</tns:Date>
+                  <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+                  <tns:Desciption>string</tns:Desciption>
+                  <tns:Temperatures><!-- mandatory -->
+                   <tns:MorningLow>string</tns:MorningLow>
+                   <tns:DaytimeHigh>string</tns:DaytimeHigh>
+                  </tns:Temperatures>
+                  <tns:ProbabilityOfPrecipiation><!-- mandatory -->
+                   <tns:Nighttime>string</tns:Nighttime>
+                   <tns:Daytime>string</tns:Daytime>
+                  </tns:ProbabilityOfPrecipiation>
+                 </tns:Forecast>
+                </tns:ForecastResult>
+               </tns:GetCityForecastByZIPResult>
+              </tns:GetCityForecastByZIPResponse>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetCityWeatherByZIPInput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Header:
+                  $ref: >-
+                    #/x-ibm-configuration/targets/Weather/definitions/GetCityWeatherByZIPHeader
+                Body:
+                  type: object
+                  properties:
+                    GetCityWeatherByZIP:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetCityWeatherByZIP_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Header>
+              <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+               <UsernameToken>
+                <Username>string</Username>
+                <Password>string</Password>
+               </UsernameToken>
+              </wsse:Security>
+             </soap-env:Header>
+             <soap-env:Body>
+              <tns:GetCityWeatherByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+               <tns:ZIP>string</tns:ZIP>
+              </tns:GetCityWeatherByZIP>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetCityWeatherByZIPHeader:
+          type: object
+          properties:
+            Security:
+              $ref: '#/x-ibm-configuration/targets/Weather/definitions/Security'
+        GetCityWeatherByZIPOutput:
+          type: object
+          properties:
+            Envelope:
+              xml:
+                prefix: soap-env
+                namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+              type: object
+              properties:
+                Body:
+                  type: object
+                  properties:
+                    GetCityWeatherByZIPResponse:
+                      $ref: >-
+                        #/x-ibm-configuration/targets/Weather/definitions/GetCityWeatherByZIPResponse_tns
+          example: >-
+
+            <soap-env:Envelope
+            xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/">
+             <soap-env:Body>
+              <tns:GetCityWeatherByZIPResponse xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+               <tns:GetCityWeatherByZIPResult><!-- mandatory -->
+                <tns:Success><!-- mandatory -->true</tns:Success>
+                <tns:ResponseText>string</tns:ResponseText>
+                <tns:State>string</tns:State>
+                <tns:City>string</tns:City>
+                <tns:WeatherStationCity>string</tns:WeatherStationCity>
+                <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+                <tns:Description>string</tns:Description>
+                <tns:Temperature>string</tns:Temperature>
+                <tns:RelativeHumidity>string</tns:RelativeHumidity>
+                <tns:Wind>string</tns:Wind>
+                <tns:Pressure>string</tns:Pressure>
+                <tns:Visibility>string</tns:Visibility>
+                <tns:WindChill>string</tns:WindChill>
+                <tns:Remarks>string</tns:Remarks>
+               </tns:GetCityWeatherByZIPResult>
+              </tns:GetCityWeatherByZIPResponse>
+             </soap-env:Body>
+            </soap-env:Envelope>
+        GetWeatherInformation_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties: {}
+          example: >-
+
+            <tns:GetWeatherInformation
+            xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+
+            </tns:GetWeatherInformation>
+        GetWeatherInformationResponse_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            GetWeatherInformationResult:
+              $ref: >-
+                #/x-ibm-configuration/targets/Weather/definitions/ArrayOfWeatherDescription_tns
+          example: >-
+
+            <tns:GetWeatherInformationResponse
+            xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+             <tns:GetWeatherInformationResult>
+              <tns:WeatherDescription><!-- between zero and unlimited repetitions of this element -->
+               <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+               <tns:Description>string</tns:Description>
+               <tns:PictureURL>string</tns:PictureURL>
+              </tns:WeatherDescription>
+             </tns:GetWeatherInformationResult>
+            </tns:GetWeatherInformationResponse>
+        GetCityForecastByZIP_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            ZIP:
+              type: string
+          example: >-
+
+            <tns:GetCityForecastByZIP
+            xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+             <tns:ZIP>string</tns:ZIP>
+            </tns:GetCityForecastByZIP>
+        GetCityForecastByZIPResponse_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            GetCityForecastByZIPResult:
+              $ref: >-
+                #/x-ibm-configuration/targets/Weather/definitions/ForecastReturn_tns
+          example: >-
+
+            <tns:GetCityForecastByZIPResponse
+            xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+             <tns:GetCityForecastByZIPResult>
+              <tns:Success><!-- mandatory -->true</tns:Success>
+              <tns:ResponseText>string</tns:ResponseText>
+              <tns:State>string</tns:State>
+              <tns:City>string</tns:City>
+              <tns:WeatherStationCity>string</tns:WeatherStationCity>
+              <tns:ForecastResult>
+               <tns:Forecast><!-- between zero and unlimited repetitions of this element -->
+                <tns:Date><!-- mandatory -->2016-04-18T14:07:37</tns:Date>
+                <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+                <tns:Desciption>string</tns:Desciption>
+                <tns:Temperatures><!-- mandatory -->
+                 <tns:MorningLow>string</tns:MorningLow>
+                 <tns:DaytimeHigh>string</tns:DaytimeHigh>
+                </tns:Temperatures>
+                <tns:ProbabilityOfPrecipiation><!-- mandatory -->
+                 <tns:Nighttime>string</tns:Nighttime>
+                 <tns:Daytime>string</tns:Daytime>
+                </tns:ProbabilityOfPrecipiation>
+               </tns:Forecast>
+              </tns:ForecastResult>
+             </tns:GetCityForecastByZIPResult>
+            </tns:GetCityForecastByZIPResponse>
+        GetCityWeatherByZIP_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            ZIP:
+              type: string
+          example: |-
+
+            <tns:GetCityWeatherByZIP xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+             <tns:ZIP>string</tns:ZIP>
+            </tns:GetCityWeatherByZIP>
+        GetCityWeatherByZIPResponse_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            GetCityWeatherByZIPResult:
+              $ref: >-
+                #/x-ibm-configuration/targets/Weather/definitions/WeatherReturn_tns
+          required:
+            - GetCityWeatherByZIPResult
+          example: >-
+
+            <tns:GetCityWeatherByZIPResponse
+            xmlns:tns="http://ws.cdyne.com/WeatherWS/">
+             <tns:GetCityWeatherByZIPResult><!-- mandatory -->
+              <tns:Success><!-- mandatory -->true</tns:Success>
+              <tns:ResponseText>string</tns:ResponseText>
+              <tns:State>string</tns:State>
+              <tns:City>string</tns:City>
+              <tns:WeatherStationCity>string</tns:WeatherStationCity>
+              <tns:WeatherID><!-- mandatory -->3</tns:WeatherID>
+              <tns:Description>string</tns:Description>
+              <tns:Temperature>string</tns:Temperature>
+              <tns:RelativeHumidity>string</tns:RelativeHumidity>
+              <tns:Wind>string</tns:Wind>
+              <tns:Pressure>string</tns:Pressure>
+              <tns:Visibility>string</tns:Visibility>
+              <tns:WindChill>string</tns:WindChill>
+              <tns:Remarks>string</tns:Remarks>
+             </tns:GetCityWeatherByZIPResult>
+            </tns:GetCityWeatherByZIPResponse>
+        ArrayOfWeatherDescription_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            WeatherDescription:
+              type: array
+              items:
+                $ref: >-
+                  #/x-ibm-configuration/targets/Weather/definitions/WeatherDescription_tns
+          x-xsi-type: ArrayOfWeatherDescription
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        ForecastReturn_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            Success:
+              type: boolean
+            ResponseText:
+              type: string
+            State:
+              type: string
+            City:
+              type: string
+            WeatherStationCity:
+              type: string
+            ForecastResult:
+              $ref: >-
+                #/x-ibm-configuration/targets/Weather/definitions/ArrayOfForecast_tns
+          required:
+            - Success
+          x-xsi-type: ForecastReturn
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        WeatherReturn_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            Success:
+              type: boolean
+            ResponseText:
+              type: string
+            State:
+              type: string
+            City:
+              type: string
+            WeatherStationCity:
+              type: string
+            WeatherID:
+              type: integer
+              format: int32
+              minimum: -32768
+              maximum: 32767
+            Description:
+              type: string
+            Temperature:
+              type: string
+            RelativeHumidity:
+              type: string
+            Wind:
+              type: string
+            Pressure:
+              type: string
+            Visibility:
+              type: string
+            WindChill:
+              type: string
+            Remarks:
+              type: string
+          required:
+            - Success
+            - WeatherID
+          x-xsi-type: WeatherReturn
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        WeatherDescription_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            WeatherID:
+              type: integer
+              format: int32
+              minimum: -32768
+              maximum: 32767
+            Description:
+              type: string
+            PictureURL:
+              type: string
+          required:
+            - WeatherID
+          x-xsi-type: WeatherDescription
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        ArrayOfForecast_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            Forecast:
+              type: array
+              items:
+                $ref: '#/x-ibm-configuration/targets/Weather/definitions/Forecast_tns'
+              x-nullable: true
+          x-xsi-type: ArrayOfForecast
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        Forecast_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            Date:
+              type: string
+              format: date-time
+            WeatherID:
+              type: integer
+              format: int32
+              minimum: -32768
+              maximum: 32767
+            Desciption:
+              type: string
+            Temperatures:
+              $ref: '#/x-ibm-configuration/targets/Weather/definitions/temp_tns'
+            ProbabilityOfPrecipiation:
+              $ref: '#/x-ibm-configuration/targets/Weather/definitions/POP_tns'
+          required:
+            - Date
+            - WeatherID
+            - Temperatures
+            - ProbabilityOfPrecipiation
+          x-xsi-type: Forecast
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        temp_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            MorningLow:
+              type: string
+            DaytimeHigh:
+              type: string
+          x-xsi-type: temp
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+        POP_tns:
+          xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+          type: object
+          properties:
+            Nighttime:
+              type: string
+            Daytime:
+              type: string
+          x-xsi-type: POP
+          x-xsi-type-xml:
+            namespace: 'http://ws.cdyne.com/WeatherWS/'
+            prefix: tns
+  categories:
+    - test category 1
+    - test category 2
+definitions:
+  access_token_response:
+    type: object
+    additionalProperties: false
+    required:
+      - token_type
+      - access_token
+      - expires_in
+    properties:
+      token_type:
+        enum:
+          - bearer
+      access_token:
+        type: string
+      expires_in:
+        type: integer
+      scope:
+        type: string
+      refresh_token:
+        type: string
+consumes:
+  - application/xml
+  - application/json
+produces:
+  - application/xml
+  - application/json
+parameters:
+  api_parameter:
+    name: api_parameter
+    type: string
+    required: false
+    in: query
+tags:
+  - name: tag-1

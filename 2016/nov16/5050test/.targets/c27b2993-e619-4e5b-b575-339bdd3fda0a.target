@@ -1,0 +1,86 @@
+type: bluemix
+server:
+  displayName: US South
+  name: us-south
+  host: us.apiconnect.ibmcloud.com
+org:
+  url: 'https://us.apiconnect.ibmcloud.com/v1/orgs/583345b30cf2aef8bc9bfc53'
+  id: 583345b30cf2aef8bc9bfc53
+  name: sakibcaibmcom-dev
+  status: active
+  orgType: apiProvider
+  displayName: sakib@ca.ibm.com (dev)
+  externalOrgId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalInviteOverride: 'https://new-console.ng.bluemix.net/apis/catalog/invitation'
+  externalSpaceId: fedec2c0-8b03-4d51-8521-b46a0f83c459
+  externalNativeOrgId: d4789a4c-2e71-4184-bd77-6e24d41906f7
+  advPortalOverride: true
+  extUaaAuthenticated: false
+  requiresSSLClientCertCheck: false
+  dormant: false
+catalog:
+  none: true
+space:
+  none: true
+app:
+  metadata:
+    guid: 349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+  entity:
+    guid: 349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+    name: newapp
+    routes:
+      - guid: f729d9c3-4308-41b4-b55a-6e85e7d84076
+        host: apiconnect-349f321a-d966-4e4a-a64c-fa7b1be4ceb5
+        port: null
+        path: ''
+        domain:
+          guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+          name: sakibcaibmcom-dev.apic.mybluemix.net
+    running_instances: 0
+    services: []
+    available_domains:
+      - guid: 45cb285c-ffca-44b1-aa8b-e95ac1e8da26
+        name: sakibcaibmcom-dev.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: af1d491d-30cd-4706-b20f-5ddc584fae78
+        name: sakibcaibmcom-cascon.apic.mybluemix.net
+        owning_organization_guid: d4789a4c-2e71-4184-bd77-6e24d41906f7
+      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
+        name: mybluemix.net
+        router_group_guid: null
+        router_group_type: null
+    production: false
+    space_guid: fedec2c0-8b03-4d51-8521-b46a0f83c459
+    stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
+    buildpack: null
+    detected_buildpack: 'SDK for Node.js(TM) (ibm-node.js-4.6.0, buildpack-v3.8-20161006-1211)'
+    environment_json: {}
+    memory: 256
+    instances: 1
+    disk_quota: 1024
+    state: STOPPED
+    version: cbea0bfb-d890-42dd-bd52-9c6e0e7098c1
+    command: null
+    console: true
+    debug: null
+    staging_task_id: 989854ba32d34865866eb4ca1b1e7dab
+    package_state: STAGED
+    health_check_type: port
+    health_check_timeout: null
+    staging_failed_reason: null
+    staging_failed_description: null
+    diego: false
+    docker_image: null
+    package_updated_at: '2016-11-24T14:30:30Z'
+    detected_start_command: ./vendor/initial_startup.rb
+    enable_ssh: true
+    docker_credentials_json:
+      redacted_message: '[PRIVATE DATA HIDDEN]'
+    ports: null
+id: c27b2993-e619-4e5b-b575-339bdd3fda0a
+target: 1.0.0
+versionOptions:
+  inplaceUpdate: true
+publishApp: true
+workspaceDir:
+  path: /Users/ssh/workspace/loopback/apic/nov16/5050test

@@ -1,0 +1,8 @@
+applications:
+- name: Test090516
+  instances: 1
+  memory: 512M
+  disk_quota: 1024M
+  host: apiconnect-215fca2e-e8a6-499e-a757-089786db6603
+  domain: sakibcaibmcom-dev.apic.mybluemix.net
+  stack: cflinuxfs2

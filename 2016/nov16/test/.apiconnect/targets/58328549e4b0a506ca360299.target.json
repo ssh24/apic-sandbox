@@ -1,0 +1,77 @@
+{
+  "type": "onprem",
+  "org": {
+    "id": "58328549e4b0a506ca36028d",
+    "name": "hikeon",
+    "displayName": "Hike On",
+    "orgType": "apiProvider",
+    "status": "active",
+    "advPortalOverride": true,
+    "extUaaAuthenticated": false,
+    "requiresSSLClientCertCheck": false,
+    "dormant": false,
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d"
+  },
+  "id": "58328549e4b0a506ca360299",
+  "server": {
+    "host": "sjsldev060.dev.ciondemand.com",
+    "displayName": "onpremc1"
+  },
+  "catalog": {
+    "id": "58328549e4b0a506ca360299",
+    "orgId": "58328549e4b0a506ca36028d",
+    "name": "Sandbox",
+    "shortName": "sb",
+    "owner": {
+      "id": "58328540e4b0a506ca36026e",
+      "username": "ibmapim+steve@gmail.com",
+      "context": "apimanager",
+      "idpId": "583282d1e4b0a506ca35fb81",
+      "email": "ibmapim+steve@gmail.com",
+      "firstName": "Steve",
+      "lastName": "OrgOwner",
+      "status": "ACTIVE",
+      "lastLoginTime": "2016-11-23T19:07:56.260+0000",
+      "url": "https://sjsldev060.dev.ciondemand.com/v1/users/58328540e4b0a506ca36026e"
+    },
+    "apiCenter": false,
+    "baseUrl": "https://sjsldev062.dev.ciondemand.com/hikeon/sb",
+    "portalType": "BASIC",
+    "portalUrl": "https://sjsldev060.dev.ciondemand.com/hikeon/sb",
+    "customPortalUrl": "https://sjsldev061.dev.ciondemand.com/hikeon/sb",
+    "gatewayType": "DataPowerGateway",
+    "idp": "58328549e4b0a506ca36029a",
+    "idps": [
+      "58328549e4b0a506ca36029a"
+    ],
+    "availableRoles": [
+      "developer",
+      "viewer"
+    ],
+    "default": false,
+    "autoDeploy": true,
+    "gatewayClusterUrl": "/gatewayClusters/583282f4e4b0a506ca35fc09",
+    "restrictedDeployment": false,
+    "invitationEnabled": true,
+    "selfSignUpEnabled": true,
+    "spaceEnabled": false,
+    "spaceIds": [
+      "58328549e4b0a506ca3602a2"
+    ],
+    "testAppEnabled": true,
+    "testAppCredentials": {
+      "clientId": "5e09d289-9f59-4c19-a62a-406f2e9fa922",
+      "clientSecret": "Y3vK3aT5xJ5rG4fI5dK5sX2eX8gA6tB1dY8gI1nH8hF2xH5iK8"
+    },
+    "createdAt": "2016-11-21T05:25:29.540+0000",
+    "updatedAt": "2016-11-21T05:25:29.540+0000",
+    "createdBy": "admin",
+    "updatedBy": "admin",
+    "url": "https://sjsldev060.dev.ciondemand.com/v1/orgs/58328549e4b0a506ca36028d/environments/58328549e4b0a506ca360299",
+    "productDeploymentApprovalRequiredStates": [],
+    "orgName": "hikeon"
+  },
+  "isFavorite": false,
+  "isHidden": false,
+  "updatedAt": "Wed Nov 23 2016 16:06:29 GMT-0500 (EST)"
+}
